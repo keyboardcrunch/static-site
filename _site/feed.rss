@@ -5,7 +5,7 @@
     <link>http://localhost:3000/</link>
     <atom:link href="http://localhost:3000/feed.rss" rel="self" type="application/rss+xml"/>
     <description></description>
-    <lastBuildDate>Sat, 01 Jul 2023 21:40:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jul 2023 22:05:44 GMT</lastBuildDate>
     <language>en</language>
     <generator>Lume v1.17.5</generator>
     <item>
@@ -157,7 +157,7 @@
         <ul>
         
         <li>
-        <a href="http://localhost:3000/thoughts/deno_and_lume/">July 1st, 2023 - Deno and Lume</a>
+        <a href="http://localhost:3000/thoughts/deno_and_lume/">1 de julio de 2023 - Deno and Lume</a>
         <p>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My future plans with Deno, and why I'll still be writing Python and PowerShell.</p>
         </li>
         

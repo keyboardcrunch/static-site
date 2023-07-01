@@ -1,5 +1,6 @@
 import lume from "lume/mod.ts";
 import date from "lume/plugins/date.ts";
+import en from "npm:date-fns/locale/es/index.js";
 import feed from "lume/plugins/feed.ts";
 import filter_pages from "lume/plugins/filter_pages.ts";
 import inline from "lume/plugins/inline.ts";
@@ -31,7 +32,9 @@ site
         "/assets/code.css",
         "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css",
       )
-    .use(date())
+    .use(date({
+        locales: {en},
+    }))
     .use(feed())
     .use(codeHighlight())
     .use(filter_pages())
