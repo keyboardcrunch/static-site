@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="/assets/main.css">
+    {% if page_css %}
+        <link rel="stylesheet" href="/styles/pages/{{ page_css }}">
+    {% endif %}
+    </head>
+    <body>
+        <div class="header">
+            <a href="/"><h2>keyboardcrunch</h2></a>
+        </div>
+        <div>
+            <div class="left"></div>
+            <div class="post-box">
+                {{ content | safe }}
+                <div class="footer">Awful Design by @keyboardcrunch</div>
+            </div>
+            </div class="right"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="about-section">
+    <!-- About Me -->
+    <div class="about-text">
+        <h2 class="">About Me</h2>
+        <p>
+            For the last 7+ years I've been a security engineer. My primary focus has been the management of endpoint security tooling, 
+            detection engineering, desktop software and SaaS reviews, and some "light" adversary emulation work.
+        </p>
+        <p>
+            I'm currently working at SpaceX but previously I was a security engineer at Woodforest National Bank (11 years!) and <i>the</i> system 
+            administrator for a small start-up building an encrypted file sharing and chat application.
+        </p>
+        <p class="">
+            My interests outside of work are varied and I'm never without a project.
+            <ul>
+                {% for interest in interests %}
+                    <li>{{ interest.topic }}</li>
+                {% endfor %}
+            </ul>
+        <p>
+    </div>
+    <!-- Links -->
+    <div class="about-links">
+        <p class="">You can find me on the following platforms:</p>
+        <ul>
+        {% for social in socials %}
+            <li><a href="{{ social.link }}">{{ social.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="post-section">
+    <!-- Blog Posts -->
+    <div class="column">
+        <h2><a href="/posts/">Posts</a></h2>
+        <ul>
+            {% for mypost in search.pages("type=blogpost", "date=desc", 10) %}
+                <li><a href="{{ mypost.url }}">{{ mypost.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Micro-blogging -->
+    <!-- May want to list date - shortname (meta), because title could be long-->
+    <div class="column">
+        <h2><a href="/thoughts/">Thoughts</a></h2>
+        <ul>
+            {% for thought in search.pages("type=thought", "date=desc", 10) %}
+                <li><a href="{{ thought.url }}">{{ thought.date | date('DATE') }} {% if thought.short_title %} - {{ thought.short_title }}{% endif %}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Good Reads -->
+    <!-- Need to figure out presentation of bookmarks/links and the data-source 
+    <div class="column">
+        <h2><a href="/thoughts/">Good Reads</a></h2>
+        <ul>
+            {% for thought in search.pages("type=thought", "", 10) %}
+                <li><a href="{{ thought.url }}">{{ thought.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    -->
+</div>

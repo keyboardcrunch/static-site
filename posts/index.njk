@@ -1,0 +1,12 @@
+---
+type: index
+title: keyboardcrunch - blog posts
+---
+<div class="centered-index">
+    <h1>Posts</h2>
+    <ul>
+        {% for mypost in search.pages("type=blogpost", "date=desc") %}
+            <li><a href="{{ mypost.url }}">{{ mypost.date | date('DATE') }} - {{ mypost.title }}</a>
+        {% endfor %}
+    </ul>
+</div>
