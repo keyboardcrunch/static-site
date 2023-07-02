@@ -13,7 +13,7 @@ interface MetaOptions {
   title: string;
   description?: string;
   date: string;
-  lastmod: string;
+  lastmod?: string;
   draft: boolean;
   url?: string;
 }
@@ -39,13 +39,13 @@ const { options } = await new Command()
 const config: MetaOptions = {
   title: "",
   date: timestamp,
-  lastmod: timestamp,
   draft: true,
 };
 
 if (options.title) config.title = options.title;
 if (options.desc) config.description = options.desc;
 if (options.contained) config.url = "./";
+config.description = options.desc || "";
 
 const meta = json2yaml(JSON.stringify(config));
 const yaml = "---\r\n" + meta + "\r---\r\n";
