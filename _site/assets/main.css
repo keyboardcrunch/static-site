@@ -2,19 +2,19 @@
 @import "/assets/code.css";
 
 body {
-  background-color: #3c5c5c;
-  color: white;
+  /*background-color: #3c5c5c;
+  color: white;*/
+  font-family: "Helvetica Neue", helvetica, sans-serif;
   box-sizing: border-box;
 }
 
 a {
-  color: white;
+  color: rgb(93, 187, 224);
   font-weight: bold;
   text-decoration: underline;
 }
 
 a:hover {
-  color: white;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -42,16 +42,15 @@ video {
 }
 
 .header {
-  margin-top: 20px;
-  text-align: center;
-  color: white;
   font-size: 30px;
   height: 60px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .header a {
   text-decoration: none;
-  color: white;
+  color: rgb(93, 187, 224);
 }
 
 .left, .right {
