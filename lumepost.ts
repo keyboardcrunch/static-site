@@ -43,7 +43,6 @@ const config: MetaOptions = {
 };
 
 if (options.title) config.title = options.title;
-if (options.desc) config.description = options.desc;
 if (options.contained) config.url = "./";
 config.description = options.desc || "";
 
