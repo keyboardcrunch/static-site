@@ -49,11 +49,20 @@ if (options.contained) config.url = "./";
 
 const meta = json2yaml(JSON.stringify(config));
 const yaml = "---\r\n" + meta + "\r---\r\n";
-const filename = config.title + ".md";
+const filename = config.title;
 
 // Create the new post
 if (options.new == "post") {
-  const filepath = path.resolve(path.join(postPath, filename));
+  let filepath = path.resolve(path.join(postPath, filename));
+  if (options.contained) {
+    try {
+      if (! existsSync(filepath) ) { Deno.mkdir(filepath);}
+      filepath = path.join(filepath, filename + ".md");
+    } catch {
+      console.log("%cFailed to create contained post.", "color:red, font-weight:bold");
+      console.log(filepath)
+    }
+  }
   if (existsSync(filepath)) {
     console.log("%cPost already exists:", "color:red; font-weight: bold");
     console.log(filepath);
@@ -74,7 +83,16 @@ if (options.new == "post") {
 
 // Create the new 'thought'
 if (options.new == "thought") {
-  const filepath = path.resolve(path.join(thoughtPath, filename));
+  let filepath = path.resolve(path.join(thoughtPath, filename));
+  if (options.contained) {
+    try {
+      if (! existsSync(filepath) ) { Deno.mkdir(filepath);}
+      filepath = path.join(filepath, filename + ".md");
+    } catch {
+      console.log("%cFailed to create contained post.", "color:red, font-weight:bold");
+      console.log(filepath)
+    }
+  }
   if (existsSync(filepath)) {
     console.log("%cPost already exists:", "color:red; font-weight:bold");
     console.log(filepath);
