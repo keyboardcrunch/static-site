@@ -6,8 +6,8 @@ import { json2yaml } from "https://deno.land/x/json2yaml/mod.ts";
 // Variable setup for the util
 const timestamp = new Date().toISOString();
 const postType = new EnumType(["post", "thought"]);
-const postPath = "./test/posts/";
-const thoughtPath = "./test/thoughts/";
+const postPath = "./posts/";
+const thoughtPath = "./thoughts/";
 
 interface MetaOptions {
   title: string;
