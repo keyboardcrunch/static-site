@@ -11,7 +11,7 @@ ready.
 This is a Deno/TypeScript util to create a new post or 'thought' template within the respective directory, with
 the necessary metadata.
 
-`deno run --allow-write lumepost.ts -h`
+`deno run --allow-read --allow-write lumepost.ts -h`
 ```
   Usage:   lumepost
   Version: 0.0.1   
