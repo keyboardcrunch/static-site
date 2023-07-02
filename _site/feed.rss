@@ -5,21 +5,45 @@
     <link>http://localhost/</link>
     <atom:link href="http://localhost/feed.rss" rel="self" type="application/rss+xml"/>
     <description></description>
-    <lastBuildDate>Sat, 01 Jul 2023 22:38:36 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jul 2023 02:00:38 GMT</lastBuildDate>
     <language>en</language>
     <generator>Lume v1.17.5</generator>
     <item>
       <title>Deno and Lume</title>
       <link>http://localhost/thoughts/deno_and_lume/</link>
       <guid isPermaLink="false">http://localhost/thoughts/deno_and_lume/</guid>
-      <description>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My future plans with Deno, and why I&apos;ll still be writing Python and PowerShell.</description>
+      <description>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My first real Deno util, and Deno Deploy comments.</description>
       <content:encoded>
         <![CDATA[<h1>First Experiences with Deno and Lume</h1>
-        <p>Deno is awesome. Lume is pretty great.</p>
-        <p>I'm in the process of building out a new static site with Lume, which is easy once you grok the design choices, and porting over everything I wrote under my last Hugo blog. This is where I really like markdown based static sites, a bit of copy/paste and update a few links and you're all set. I don't even want to think about all the wordpress and ghost sites I have decommissioned over time, and how much history lost (though I have the backups, I'm too lazy to merge it from json exports).</p>
+        <p>Deno is awesome. Lume is pretty great too.</p>
+        <p>I'm in the process of building out a new static site with <strong>Lume</strong> (this site you're reading right now!), which is easy once you grok the design choices, and porting over everything I wrote under my last Hugo blog. This is where I really like markdown based static sites, a bit of copy/paste and update a few links and you're all set. I don't even want to think about all the wordpress and ghost sites I have decommissioned over time, and how much history lost (though I have the backups, I'm too lazy to merge it from json exports).</p>
+        <p><strong>Deno Deploy</strong> was exceedingly easy to get working, just as all the reviews and feedback said and easier than the docs led on. I was able move my code to GitHub, sign-in to Deno Deploy with my GitHub account, link the project and done!</p>
+        <p>I'm enjoying Deno enough that I decided to write out the &quot;new post&quot; util called <code>lumepost.ts</code> in Deno, and while I've got very little previous experience with JavaScript and TypeScript, I was able to write it out in about 50 minutes with a lot of learning in the process. The next thing I'm eyeing is Deno executed with Supabase functions.</p>
         ]]>
       </content:encoded>
       <pubDate>Sun, 02 Jul 2023 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>keyboardcrunch - micro-blog</title>
+      <link>http://localhost/thoughts/</link>
+      <guid isPermaLink="false">http://localhost/thoughts/</guid>
+      <description/>
+      <content:encoded>
+        <![CDATA[<!-- We should probably treat this like a micro-blog, show date - title - content (maybe auto-collapse box) -->
+        
+        <div class="centered-index">
+        <h1>Thoughts</h2>
+        <ul>
+        
+        <li>
+        <a href="http://localhost/thoughts/deno_and_lume/">July 1st, 2023 - Deno and Lume</a>
+        <p>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My first real Deno util, and Deno Deploy comments.</p>
+        </li>
+        
+        </ul>
+        </div>]]>
+      </content:encoded>
+      <pubDate>Sat, 01 Jul 2023 21:49:03 GMT</pubDate>
     </item>
     <item>
       <title>keyboardcrunch - blog posts</title>
@@ -46,7 +70,7 @@
         </ul>
         </div>]]>
       </content:encoded>
-      <pubDate>Sat, 01 Jul 2023 18:56:16 GMT</pubDate>
+      <pubDate>Sat, 01 Jul 2023 21:48:43 GMT</pubDate>
     </item>
     <item>
       <title>keyboardcrunch</title>
@@ -123,7 +147,7 @@
         <h2><a href="http://localhost/thoughts/">Thoughts</a></h2>
         <ul>
         
-        <li><a href="http://localhost/thoughts/deno_and_lume/">2023-07-01  - Deno and Lume</a></li>
+        <li><a href="http://localhost/thoughts/deno_and_lume/">2023-07-01 </a></li>
         
         </ul>
         </div>
@@ -142,29 +166,7 @@
         </div>
         ]]>
       </content:encoded>
-      <pubDate>Sat, 01 Jul 2023 18:56:16 GMT</pubDate>
-    </item>
-    <item>
-      <title>keyboardcrunch - micro-blog</title>
-      <link>http://localhost/thoughts/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/</guid>
-      <description/>
-      <content:encoded>
-        <![CDATA[<!-- We should probably treat this like a micro-blog, show date - title - content (maybe auto-collapse box) -->
-        
-        <div class="centered-index">
-        <h1>Thoughts</h2>
-        <ul>
-        
-        <li>
-        <a href="http://localhost/thoughts/deno_and_lume/">July 1st, 2023 - Deno and Lume</a>
-        <p>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My future plans with Deno, and why I'll still be writing Python and PowerShell.</p>
-        </li>
-        
-        </ul>
-        </div>]]>
-      </content:encoded>
-      <pubDate>Sat, 01 Jul 2023 18:56:16 GMT</pubDate>
+      <pubDate>Sat, 01 Jul 2023 21:32:23 GMT</pubDate>
     </item>
     <item>
       <title>Finding Some Inspiration</title>
