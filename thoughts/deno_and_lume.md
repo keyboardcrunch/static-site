@@ -1,6 +1,7 @@
 ---
 date: 2023-07-02
 title: Deno and Lume
+short_title: Deno and Lume
 description: 
     Talking about my first experience with Deno and using Lume to 
     replace my Hugo static site. My first real Deno util, and Deno Deploy comments.
