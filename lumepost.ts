@@ -1,7 +1,7 @@
-import { Command, EnumType } from "https://deno.land/x/cliffy/command/mod.ts";
-import * as path from "https://deno.land/std/path/mod.ts";
-import { existsSync } from "https://deno.land/std/fs/mod.ts";
-import { json2yaml } from "https://deno.land/x/json2yaml/mod.ts";
+import { Command, EnumType } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
+import * as path from "https://deno.land/std@0.192.0/path/mod.ts";
+import { existsSync } from "https://deno.land/std@0.192.0/fs/mod.ts";
+import { json2yaml } from "https://deno.land/x/json2yaml@v1.0.1/mod.ts";
 
 // Variable setup for the util
 const timestamp = new Date().toISOString();
