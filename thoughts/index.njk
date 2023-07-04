@@ -5,7 +5,7 @@ title: keyboardcrunch - micro-blog
 <!-- We should probably treat this like a micro-blog, show date - title - content (maybe auto-collapse box) -->
 
 <div class="centered-index">
-    <h1>Thoughts</h2>
+    <h1>Thoughts <a class="rss-icon" href="./feed.rss">&nbsp</a></h2>
     <ul>
         {% for mypost in search.pages("type=thought", "date=desc") %}
             <li>
