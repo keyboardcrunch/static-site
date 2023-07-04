@@ -4,7 +4,7 @@ import feed from "lume/plugins/feed.ts";
 import filter_pages from "lume/plugins/filter_pages.ts";
 import inline from "lume/plugins/inline.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
-import minifyHTML from "lume/plugins/minify_html.ts";
+//import minifyHTML from "lume/plugins/minify_html.ts";
 
 const search = { returnPageData: true }; // Lume 2.0 prep, post.title vs post.data.title
 const paginate = {/* your config here */};
@@ -78,8 +78,8 @@ site
     .use(feed(thoughtFeed))
     .use(codeHighlight())
     .use(filter_pages())
-    .use(inline())
-    .use(minifyHTML());
+    .use(inline());
+    //.use(minifyHTML());
 
 
 export default site;
