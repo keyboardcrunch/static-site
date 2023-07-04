@@ -2,16 +2,16 @@
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
   <channel>
     <title>keyboardcrunch.com</title>
-    <link>http://localhost/</link>
-    <atom:link href="http://localhost/thoughts/feed.rss" rel="self" type="application/rss+xml"/>
+    <link>http://localhost:3000/</link>
+    <atom:link href="http://localhost:3000/thoughts/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of an internet dwelling creature.</description>
-    <lastBuildDate>Tue, 04 Jul 2023 02:20:47 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jul 2023 02:27:04 GMT</lastBuildDate>
     <language>en</language>
     <generator/>
     <item>
       <title>Deno and Lume</title>
-      <link>http://localhost/thoughts/deno_and_lume/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/deno_and_lume/</guid>
+      <link>http://localhost:3000/thoughts/deno_and_lume/</link>
+      <guid isPermaLink="false">http://localhost:3000/thoughts/deno_and_lume/</guid>
       <description>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My first real Deno util, and Deno Deploy comments.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sun, 02 Jul 2023 00:00:00 GMT</pubDate>

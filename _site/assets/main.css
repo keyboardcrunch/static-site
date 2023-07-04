@@ -2,8 +2,6 @@
 @import "/assets/code.css";
 
 body {
-  /*background-color: #3c5c5c;
-  color: white;*/
   font-family: "Helvetica Neue", helvetica, sans-serif;
   box-sizing: border-box;
 }
@@ -129,5 +127,24 @@ a.rss-icon {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     min-width: 100%;
     margin-top: 0px;
+  }
+}
+
+/* Use a media query to invert color scheme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(49, 49, 49);
+    color: white;
+  }
+  .header a {
+    text-decoration: none;
+    color: rgb(93, 187, 224);
+    background-color: transparent;
+  }
+
+  a {
+    color: rgb(93, 187, 224);
+    font-weight: bold;
+    text-decoration: underline;
   }
 }
