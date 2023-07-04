@@ -35,5 +35,5 @@ the necessary metadata.
 * ~~Create a helper util to create new post/thought pages~~
 * Setup the Lume Feed plugin so all site posts aren't bundled together
 * Complete the 'Good Reads' bookmarks aggregator for the home page
-* Add a theme toggle for dark/light mode
+* ~~Add a theme toggle for dark/light mode~~
 
