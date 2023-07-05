@@ -4,6 +4,8 @@ date: 2021-04-15T19:16:38-05:00
 draft: false
 ---
 
+# Recommended SentinelOne Custom Detections (STAR Rules)
+
 ## Deep Visibility
 SentinelOne Deep Visibility has a very powerful language for querying on nearly any endpoint activity you'd want to dig up. I've been using the Watchlist feature very heavily; from detecting common phishing Url patterns, unapproved software, insider threats, to LOLBAS activity. But very soon the Watchlist feature will be superseded by Custom Detections, basically Watchlist with ranking and remediation options.
 

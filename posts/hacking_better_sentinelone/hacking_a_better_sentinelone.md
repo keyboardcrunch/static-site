@@ -5,6 +5,8 @@ date: 2022-03-26T12:43:36-05:00
 draft: false
 ---
 
+# Hacking A Better SentinelOne
+
 One of my few frustrations with modern EDR tooling are that most all of them have thrown out one of the most useful features of the legacy anti-virus, scanning of USB drives. They're a vector for malicious files onto the network, files that could migrate to other places in your network before they're ever analyzed, and this can possibly be an issue with compliance regulations (or at least a frustrated CISO as I experienced). So cool, USB content is ignored until it's written somewhere else... Guess what? EDR's like Crowdstrike and SentinelOne don't do on-write scanning for SMB/NFS (usually just on-execute). Now if you work with a lot of vendors with software, firmware, and documents then you'll know it's best to get those off USB and onto a network share. So let's abuse a feature of SentinelOne to add on-connect USB device scanning.
 
 ### The Lead

@@ -3,12 +3,9 @@ title: "Fun With Wireguard"
 date: 2021-03-30T21:12:25-05:00
 lastmod: 2021-11-03T21:12:25-05:00
 draft: false
-
-# HelloFriend Specific
-hideReadMore: false
-#cover = "img/default.jpg"
-#description = "description"
 ---
+
+# Fun With Wireguard
 
 After a recent conversation I realized that some folks have a narrow view of what can be done 
 with Wireguard, and VPN connections in general. Though recently a number of toolsets/frameworks 

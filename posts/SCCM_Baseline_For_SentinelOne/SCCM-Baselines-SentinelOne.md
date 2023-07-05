@@ -2,8 +2,11 @@
 url: ./
 title: "SCCM Baselines for SentinelOne"
 date: 2021-03-31T19:10:01-05:00
+lastmod: 2021-04-05T19:10:01-05:00
 draft: false
 ---
+
+# SCCM Baselines for SentinelOne
 
 After a recent deployment to upgrade our SentinelOne agents I noticed a few unusual issues with agents; Agents offline in console, unresponsive agent module in Sentinelctl, SentinelAgent Windows service stuck in starting state. This may be specific to my organization's environment, or our deployment method, but may also be due to changes to Anti-Tamper that restrict the use of 3rd party deployment tools through agents 4.6.2 - 4.6.12. On these systems the `SentinelCtl.exe status` command told me everything I needed to know, where the Agent Health and Required Actions categories within the Console didn't reflect any problems. So I set out to create baselines within Microsoft Configuration Manager so that we could keep an eye out for these issues.
 

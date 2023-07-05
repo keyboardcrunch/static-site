@@ -4,6 +4,8 @@ date: 2021-01-30T14:42:21-06:00
 draft: false
 ---
 
+# Email Security
+
 This post started as a quick note for securing email for unused domains but I decided I could expand upon it a bit more to define terms in a language I believe to be more clear than I've seen elsewhere, and from the view-point of an administrator or domain owner.
 
 ## Index
