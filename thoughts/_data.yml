@@ -1,2 +1,2 @@
-layout: layouts/post.njk
+layout: layouts/page.njk
 type: thought
