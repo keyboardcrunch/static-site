@@ -3,7 +3,7 @@
 
 body {
   font-family: "Helvetica Neue", helvetica, sans-serif;
-  box-sizing: border-box;
+  background-color: whitesmoke;
 }
 
 a {
@@ -46,8 +46,7 @@ video {
 
 .header {
   font-size: 30px;
-  height: 60px;
-  margin-top: 20px;
+  height: 40px;
   text-align: center;
 }
 
@@ -56,52 +55,58 @@ video {
   color: rgb(93, 187, 224);
 }
 
-.left, .right {
-  float:left;
-  width: 20%;
-  border: 1px solid transparent;
-}
-
-.post-box {
-  float:left;
-  width: 60%;
-  border: 1px solid transparent;
+.container-center {
+  width: 70%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1;
+  padding: 10px;
+  overflow-x: auto;
 }
 
 .about-section {
   float: left;
   margin-top: 20px;
-  width: 100%;
+  width: 100% auto;
+}
+
+.about-header {
+  height: auto;
+  margin-bottom: -10px;
 }
 
 .about-text {
   float: left;
-  width: 68%;
-  margin-right: 20px;
+  width: 60%;
+
 }
 
 .about-links {
   float: left;
-  width: 30%;
-  margin-top: 50px;
+  padding-left: 20px;
 }
 
 .post-section {
   float: left;
   width: 100%;
+  margin-top: -20px;
 }
 
 .column {
-  float: left;
-  width: 33% auto;
+  float: inherit;
+  width: fit-content;
+  padding-right: 10px;
+  /*
+  width: 33%;
   min-width: 30%;
   max-width: 50%;
-  margin: 10px;
+  */
 }
 
 .centered-index {
   margin: 0 auto;
-  width: 60%;
+  width: fit-content;
 }
 
 .error-block {
@@ -129,13 +134,31 @@ a.rss-icon {
   margin-left: 10px;
 }
 
-/* Use a media query to add a breakpoint at 800px: */
-@media screen and (max-width: 800px) {
-  .left, .post-box, .right, .column, .about-text, .about-links, .centered-index {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-    min-width: 100%;
-    margin-top: 0px;
+/* Use a media query to add a breakpoint for window size */
+@media screen and (max-width: 1120px) {
+  .container-center, .about-text, .about-links, .centered-index {
+    float: none;
+    width:fit-content;
+    padding: 10px;
   }
+
+  .about-links {
+    margin-top: -20px;
+  }
+
+  .post-section {
+    float: left;
+    width: 100%;
+    margin: 10;
+  }
+
+  .column {
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
   .footer {
     height: 30px;
   }
@@ -147,6 +170,7 @@ a.rss-icon {
     background-color: rgb(49, 49, 49);
     color: white;
   }
+
   .header a {
     text-decoration: none;
     color: rgb(93, 187, 224);
