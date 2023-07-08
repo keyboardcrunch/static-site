@@ -44,6 +44,11 @@ video {
   max-width: 100%;
 }
 
+code {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 .header {
   font-size: 30px;
   height: 40px;
@@ -62,7 +67,6 @@ video {
   margin-right: auto;
   margin-bottom: 1;
   padding: 10px;
-  overflow-x: auto;
 }
 
 .about-section {
@@ -122,6 +126,7 @@ video {
   width: 100%;
   bottom: 0;
   left: 0;
+  margin-bottom: auto;
   position: relative;
   display: inline-block;
   text-align:center;
@@ -138,12 +143,10 @@ a.rss-icon {
 @media screen and (max-width: 1120px) {
   .container-center, .about-text, .about-links, .centered-index {
     float: none;
-    width:fit-content;
-    padding: 10px;
-  }
-
-  .about-links {
-    margin-top: -20px;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
   }
 
   .post-section {
