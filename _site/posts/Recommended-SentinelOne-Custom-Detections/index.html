@@ -38,7 +38,7 @@
 <p><strong>Sub-Techniques:</strong> T1003.001 LSASS Memory, T1003.003 NTDS</p>
 <p><strong>Description:</strong> Credential theft being the ultimate goal before moving on to lateral movement, the below sub-techniques are commonly observed by actors and go beyond the general detections.</p>
 <p><strong>Query:</strong></p>
-<pre><code>( TgtProcImageSha1 = "f0c52cea19c204f5cdbe952cc7cfc182e20d8d43" OR TgtProcCmdline ContainsCIS "-ma lsass.exe" OR TgtProcCmdline RegExp "(?i)comsvcs.dl.*(minidump)" OR TgtFilePath = "C:\Windows\Temp\dumpert.dmp" OR TgtFilePath RegExp "^.*lsass.*.DMP" OR (SrcProcCmdline ContainsCIS "sekurlsa::minidump" OR SrcProcCmdline ContainsCIS "sekurlsa::logonpasswords") OR SrcProcCmdline ContainsCIS "live lsa" )
+<pre><code class="language-text hljs language-plaintext">( TgtProcImageSha1 = "f0c52cea19c204f5cdbe952cc7cfc182e20d8d43" OR TgtProcCmdline ContainsCIS "-ma lsass.exe" OR TgtProcCmdline RegExp "(?i)comsvcs.dl.*(minidump)" OR TgtFilePath = "C:\Windows\Temp\dumpert.dmp" OR TgtFilePath RegExp "^.*lsass.*.DMP" OR (SrcProcCmdline ContainsCIS "sekurlsa::minidump" OR SrcProcCmdline ContainsCIS "sekurlsa::logonpasswords") OR SrcProcCmdline ContainsCIS "live lsa" )
 OR
 ( SrcProcCmdline RegExp "^.*copy.*\\Windows\\NTDS\\NTDS.dit.*" OR SrcProcCmdline RegExp "^.*copy.*\\Windows\\System32\\config\\SYSTEM .*" OR SrcProcCmdline ContainsCIS "save HKLM\SYSTEM" OR (TgtProcName = "ntdsutil.exe" AND TgtProcCmdline ContainsCIS "ac i ntds") )
 </code></pre>
@@ -49,7 +49,7 @@ OR
 <p><strong>Sub-Techniques:</strong> T1053.002 Windows AT, T1053.005 Scheduled Task</p>
 <p><strong>Description:</strong> Common in the persistence stage of attacks is the scheduling of tasks. Combined into a single query is the detection of the two most common sub-techniques, AT command and scheduled tasks.</p>
 <p><strong>Query:</strong></p>
-<pre><code>( TgtProcName = "at.exe" AND TgtProcCmdLine ContainsCIS "/interactive " )
+<pre><code class="language-text hljs language-plaintext">( TgtProcName = "at.exe" AND TgtProcCmdLine ContainsCIS "/interactive " )
 OR
 ( ( ( TgtProcName = "schtasks.exe" AND TgtProcCmdLine ContainsCIS "/create" ) OR ( SrcProcCmdLine ContainsCIS "New-ScheduledTask" OR SrcProcCmdScript  ContainsCIS "New-ScheduledTask" ) ) AND SrcProcParentName Not In ("services.exe", "OfficeClickToRun.exe" ) AND ObjectType != "cross_process" )
 </code></pre>
@@ -60,7 +60,7 @@ OR
 <p><strong>Description:</strong> It's not uncommon for attackers to take actions to blind defenders and one of the easiest and most common is to disable system logging, turning off the firewall, or disabling Windows security features. Below I've broken out three queries that focus on detecting those attacks, and each of those queries is broken up logically by OR statements that could be used separately. Threre are so many detections to be built out for T1562, especially <a href="https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1562.001/T1562.001.md">T1562.001</a> That I recommend you dig deeper into this.</p>
 <h4>T1562.001 Disable Logging</h4>
 <p><strong>Description:</strong> In order, this script detects the disabling of Syslog and two methods of disabling Sysmon logging.</p>
-<pre><code>( TgtProcName In Contains ( "service", "chkconfig", "systemctl" ) AND TgtProcCmdLine In Contains ( "rsyslog stop", "off rsyslog", "stop rsyslog", "disable rsyslog" ) )
+<pre><code class="language-text hljs language-plaintext">( TgtProcName In Contains ( "service", "chkconfig", "systemctl" ) AND TgtProcCmdLine In Contains ( "rsyslog stop", "off rsyslog", "stop rsyslog", "disable rsyslog" ) )
 OR
 ( TgtProcName = "fltmc.exe" AND TgtProcCmdLine ContainsCIS "unload SysmonDrv" )
 OR
@@ -68,13 +68,13 @@ OR
 </code></pre>
 <h4>T1562.001 Disable Security</h4>
 <p><strong>Description:</strong> The below query will detect disabling of AMSI providers or the disabling of Excel security features.</p>
-<pre><code>( RegistryPath ContainsCIS "\Microsoft\AMSI\Providers" AND EventType In ( "Registry Key Delete", "Registry Value Delete" ) )
+<pre><code class="language-text hljs language-plaintext">( RegistryPath ContainsCIS "\Microsoft\AMSI\Providers" AND EventType In ( "Registry Key Delete", "Registry Value Delete" ) )
 OR
 ( RegistryKeyPath ContainsCIS "Excel\Security" OR RegistryKeyPath ContainsCIS "Excel\Security\ProtectedView") AND RegistryKeyPath In Contains Anycase ( "VBAWarnings","DisableInternetFilesInPV","DisableUnsafeLocationsInPV","DisableAttachementsInPV" ) AND EventType In ( "Registry Value Create","Registry Value Modified" ) )
 </code></pre>
 <h4>T1562.004 Tamper with Firewall</h4>
 <p><strong>Description:</strong> In order, the below query will detect the disable of the Windows firewall followed by methods for disabling the Linux firewall.</p>
-<pre><code>( TgtProcName = "netsh.exe" AND TgtProcCmdLine ContainsCIS "state off" )
+<pre><code class="language-text hljs language-plaintext">( TgtProcName = "netsh.exe" AND TgtProcCmdLine ContainsCIS "state off" )
 OR
 ( SrcProcName In Contains ("service","chkconfig") AND SrcProcCmdLine In Contains ("off","stop") AND SrcProcCmdLine ContainsCIS "tables") OR (TgtProcName = "systemctl" AND TgtProcCmdLine In Contains ("stop","disable") AND TgtProcCmdLine Contains "firewalld" )
 </code></pre>
@@ -85,12 +85,12 @@ OR
 <p><strong>Description:</strong> Attackers often abuse the command and script interpreters already present on systems to execute malicious code. For relevance and fidelity I've broken detections out into detecting two different common methods, execution of scripts from temp directories and Powershell download cradles.</p>
 <h4>T1059.001 Powershell Download Cradles</h4>
 <p><strong>Description:</strong> There are many methods for initiating a file download with Powershell, and a few obscure ways of executing Powershell, so here we're focusing on the command strings for detection.</p>
-<pre><code>ProcessCmd In Contains Anycase  ( "Net.WebClient", "(iwr", "DownloadString(", "WinHttp.WinHttpRequest"  , "IEX ", "| IEX", "InternetExplorer.Application", "Msxml2.XMLHTTP", "DownloadString(" )
+<pre><code class="language-text hljs language-plaintext">ProcessCmd In Contains Anycase  ( "Net.WebClient", "(iwr", "DownloadString(", "WinHttp.WinHttpRequest"  , "IEX ", "| IEX", "InternetExplorer.Application", "Msxml2.XMLHTTP", "DownloadString(" )
 </code></pre>
 <h4>T1059 Execution from Temp Directories</h4>
 <p><strong>Sub-Techniques:</strong> T1059.003 Windows Command Shell, T1059.005 Visual Basic</p>
 <p><strong>Description:</strong> The below will detect either cscript or cmd executing a bat or vbs from any Temp directory, regardless of case.</p>
-<pre><code>SrcProcName In ( "cscript.exe", "cmd.exe" ) AND SrcProcCmdLine RegExp "(?i)\bTemp\b.*\.(bat|vbs)" AND SrcProcParentName != "msiexec.exe"
+<pre><code class="language-text hljs language-plaintext">SrcProcName In ( "cscript.exe", "cmd.exe" ) AND SrcProcCmdLine RegExp "(?i)\bTemp\b.*\.(bat|vbs)" AND SrcProcParentName != "msiexec.exe"
 </code></pre>
 <h3>T1218 Signed Binary Proxy Execution</h3>
 <p><strong>Tactic:</strong> Execution</p>
@@ -100,13 +100,13 @@ OR
 Signed binary proxy execution is a method for bypassing standard defenses through execution of malicious content by signed binaries. I've decided to build these out as two queries, focusing on execution of scripts and remote content, because the other sub-techniques are require a lot of environment specific tuning.</p>
 <h4>T1218 Script Execution</h4>
 <p><strong>Sub-Techniques:</strong> T1218.005 Mshta, T1218.011 Rundll32</p>
-<pre><code>SrcProcName In ( "mshta.exe", "rundll32.exe" ) and SrcProcCmdLine In Contains Anycase ( "javascript:", "vbscript:", "wscript.shell", "env:appdata", "script:", "mshtml,RunHTMLApplication" )
+<pre><code class="language-text hljs language-plaintext">SrcProcName In ( "mshta.exe", "rundll32.exe" ) and SrcProcCmdLine In Contains Anycase ( "javascript:", "vbscript:", "wscript.shell", "env:appdata", "script:", "mshtml,RunHTMLApplication" )
 </code></pre>
 <h4>T1218 with Remote Payload</h4>
 <p><strong>Sub-Techniques:</strong> T1218.001 Compiled HTML, T1218.005 Mshta, T1218.007, T1218.010 Regsvr32, T1218.011 Rundll32</p>
 <p><strong>Description:</strong> The below query will detect execution of payloads with remote content (urls) in the command line.</p>
 <p><strong>Query:</strong></p>
-<pre><code>SrcProcName In( "mshta.exe", "hh.exe", "regsvr32.exe", "rundll32.exe", "msiexec.exe" ) AND SrcProcCmdLine RegExp "https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&amp;\/\/=]*)"
+<pre><code class="language-text hljs language-plaintext">SrcProcName In( "mshta.exe", "hh.exe", "regsvr32.exe", "rundll32.exe", "msiexec.exe" ) AND SrcProcCmdLine RegExp "https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&amp;\/\/=]*)"
 </code></pre>
 <h3>T1482 Domain Trust Discovery</h3>
 <p><strong>Tactic:</strong> Discovery</p>
@@ -115,7 +115,7 @@ Signed binary proxy execution is a method for bypassing standard defenses throug
 <p><strong>Description:</strong>
 The below query will detect domain trust enumeration/discovery through the execution of Nltest, dsquery, AdFind, and Powershell AD modules (in order).</p>
 <p><strong>Query:</strong></p>
-<pre><code>( TgtProcName = "nltest.exe" AND ( TgtProcCmdLine ContainsCIS "domain_trusts" OR TgtProcCmdLine ContainsCIS "all_trusts" OR TgtProcCmdLine ContainsCIS "dclist" ))
+<pre><code class="language-text hljs language-plaintext">( TgtProcName = "nltest.exe" AND ( TgtProcCmdLine ContainsCIS "domain_trusts" OR TgtProcCmdLine ContainsCIS "all_trusts" OR TgtProcCmdLine ContainsCIS "dclist" ))
 OR
 ( TgtFileInternalName ContainsCIS "AdFind" AND ( TgtProcCmdLine ContainsCIS "trustdmp" OR TgtProcCmdLine ContainsCIS "-f \"(objectcategory=") )
 OR
@@ -127,7 +127,7 @@ OR
 <p><strong>Reference:</strong> <a href="https://attack.mitre.org/techniques/T1548/">https://attack.mitre.org/techniques/T1548/</a></p>
 <p><strong>Description:</strong> Elevation control mechanisms such as Windows UAC are often abused to elevate privileges. The below query will detect a few of these techniques, though the methods of UAC bypass are consistently expanding.</p>
 <p><strong>Query:</strong></p>
-<pre><code>( SrcProcCmdLine ContainsCIS "\shell\open\command" AND SrcProcCmdLine RegExp "(?i).*(cmd.exe|fodhelper.exe|ComputerDefaults.exe|sdclt.exe)" AND ObjectType = "process" ) OR ( SrcProcCmdLine ContainsCIS "C:\Windows \S" AND ObjectType != "registry" )
+<pre><code class="language-text hljs language-plaintext">( SrcProcCmdLine ContainsCIS "\shell\open\command" AND SrcProcCmdLine RegExp "(?i).*(cmd.exe|fodhelper.exe|ComputerDefaults.exe|sdclt.exe)" AND ObjectType = "process" ) OR ( SrcProcCmdLine ContainsCIS "C:\Windows \S" AND ObjectType != "registry" )
 </code></pre>
 <h3>T1027.004 Compile After Delivery</h3>
 <p><strong>Tactic:</strong> Defense Evasion</p>
@@ -135,7 +135,7 @@ OR
 <p><strong>Reference:</strong> <a href="https://attack.mitre.org/techniques/T1027/004/">https://attack.mitre.org/techniques/T1027/004/</a></p>
 <p><strong>Description:</strong> Transfer and compilation of source code is often the easiest way to bypass over-the-wire detections as well as reducing detections. The below query will detect execution by csc or msbuild, limited by compilation with either target or output arguments.</p>
 <p><strong>Query:</strong></p>
-<pre><code>SrcProcName In ( "csc.exe", "msbuild.exe" ) AND TgtFileIsExecutable IS TRUE AND ( SrcProcCmdLine RegExp "(?i).*\/t.*:.*" OR SrcProcCmdLine RegExp "(?i).*\/o.*:.*exe" )
+<pre><code class="language-text hljs language-plaintext">SrcProcName In ( "csc.exe", "msbuild.exe" ) AND TgtFileIsExecutable IS TRUE AND ( SrcProcCmdLine RegExp "(?i).*\/t.*:.*" OR SrcProcCmdLine RegExp "(?i).*\/o.*:.*exe" )
 </code></pre>
 
 
