@@ -5,9 +5,17 @@
     <link>http://localhost/</link>
     <atom:link href="http://localhost/thoughts/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of an internet dwelling creature.</description>
-    <lastBuildDate>Sat, 08 Jul 2023 22:46:36 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jul 2023 01:15:18 GMT</lastBuildDate>
     <language>en</language>
     <generator/>
+    <item>
+      <title>Art of the cowboy</title>
+      <link>http://localhost/thoughts/Art of the cowboy/</link>
+      <guid isPermaLink="false">http://localhost/thoughts/Art of the cowboy/</guid>
+      <description>Developers vs Cowboys, the arts of putting things on the internet.</description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Fri, 21 Jul 2023 00:38:59 GMT</pubDate>
+    </item>
     <item>
       <title>Deno and Lume</title>
       <link>http://localhost/thoughts/deno_and_lume/</link>
