@@ -9,11 +9,11 @@ description: "Developers vs Cowboys, the arts of putting things on the internet.
 # Developers vs Cowboys, the arts of putting things on the internet.
 
 Being that my day job, hobbies, and interests are all intersecting with security... I read a lot of "news" about security related events and "hackers". Something I'm frequently reading and shaking my head at is the old narrative of 
-```
+```text
 "Hackers are exploiting $X thousand $SOFTWARE servers that developers unknowingly exposed to the internet without security controls."
 ```
 And without directly calling out specific posts or the existence of Redis servers facing the public internet, I'd like to introduce my definition of these _administrators_ and _developers_. I call them **cowboys**.
-```
+```text
 Cowboy'ing (verb)
 The act of taking on or working a project, and executing on it without taking the steps of understanding the components or their implications.
 
