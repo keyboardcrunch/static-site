@@ -29,7 +29,7 @@ layout: layouts/base.njk
         <p class="">You can find me on the following platforms:</p>
         <ul>
         {% for social in socials %}
-            <li><a href="{{ social.link }}">{{ social.name }}</a></li>
+            <li><a rel="me" href="{{ social.link }}">{{ social.name }}</a></li>
         {% endfor %}
         </ul>
     </div>
