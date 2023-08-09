@@ -97,6 +97,19 @@ code {
   margin-top: -20px;
 }
 
+.post-navigation ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post-navigation li {
+  padding: 1em;
+  list-style: none;
+}
+
 .column {
   float: inherit;
   width: fit-content;
