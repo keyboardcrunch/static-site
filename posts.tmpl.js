@@ -7,7 +7,7 @@ export default function* ({ search, paginate }) {
   const posts = search.pages("type=blogpost", "date=desc");
 
   for (
-    const data of paginate(posts, { url, size: 2 })
+    const data of paginate(posts, { url, size: 20 })
   ) {
     // Show the first page in the menu
     if (data.pagination.page === 1) {
