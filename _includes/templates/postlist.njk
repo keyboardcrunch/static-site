@@ -1,5 +1,5 @@
 <div class="centered-index">
-    <h1>Posts <a class="rss-icon" href="/posts/feed.rss">&nbsp</a></h2>
+    <h1>{{ heading }} <a class="rss-icon" href="/{{ pageroute }}/feed.rss">&nbsp</a></h2>
     <ul>
         {% for post in postslist %}
             <li><a href="{{ post.url }}">{{ post.date | date('DATE') }} - {{ post.title }}</a>

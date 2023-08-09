@@ -1,5 +1,7 @@
 export const layout = "layouts/posts.njk";
 export const title = "keyboardcrunch - thoughts";
+export const heading = "Thoughts";
+export const pageroute = "thoughts";
 
 export default function* ({ search, paginate }) {
   const posts = search.pages("type=thought", "date=desc");
