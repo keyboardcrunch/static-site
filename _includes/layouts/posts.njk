@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+
+{% set postslist = results %}
+{% include "templates/postlist.njk" %}
+
+
+<nav class="post-navigation">
+  <ul>
+    {%- if pagination.previous %}
+    <li>
+      <a href="{{ pagination.previous }}" rel="prev">← Previous</a>
+    </li>
+    {% endif %}
+
+    <li>
+      Page {{ pagination.page }}
+    </li>
+
+    {%- if pagination.next %}
+    <li>
+      <a href="{{ pagination.next }}" rel="next">Next →</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
