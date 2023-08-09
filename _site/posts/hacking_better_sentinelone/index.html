@@ -13,7 +13,14 @@
                 <div class="header">
                     <a href="/"><h2>keyboardcrunch</h2></a>
                 </div>
-                <h1>Hacking A Better SentinelOne</h1>
+                <!-- page metadata for readers -->
+<div class="post-meta">
+    <p>
+        <b>Created: </b> 2022-03-26
+    
+    </p>
+<!-- page content -->
+<h1>Hacking A Better SentinelOne</h1>
 <p>One of my few frustrations with modern EDR tooling are that most all of them have thrown out one of the most useful features of the legacy anti-virus, scanning of USB drives. They're a vector for malicious files onto the network, files that could migrate to other places in your network before they're ever analyzed, and this can possibly be an issue with compliance regulations (or at least a frustrated CISO as I experienced). So cool, USB content is ignored until it's written somewhere else... Guess what? EDR's like Crowdstrike and SentinelOne don't do on-write scanning for SMB/NFS (usually just on-execute). Now if you work with a lot of vendors with software, firmware, and documents then you'll know it's best to get those off USB and onto a network share. So let's abuse a feature of SentinelOne to add on-connect USB device scanning.</p>
 <h3>The Lead</h3>
 <p>Within the SentinelOne /docs we can see that the Sentinel Agent implements a COM server with a few methods that can be used to create a custom application (like a tray application). The documentation mostly makes references to threat and infected status, and the documentation and sample code provided is lacking. So let's just start digging here.</p>
@@ -81,9 +88,8 @@ scan_status = subprocess.run([sentinelctl, <span class="hljs-string">'scan_folde
 <h3>The Prototype</h3>
 <p>With the above code we can successfully monitor for new USB mass storage devices being connected, and initiate a scan with SentinelCtl on that drive, while handling some specific behavior regarding running scans. <a href="https://github.com/keyboardcrunch/sentinelone_usbscan/blob/main/usbscan.py">usbscan.py</a> is just a quick proof of concept, but I've thrown in some logging and the ability to run completely without any administrative priviledges. I won't cover it here, but next steps are to compile and sign a Windows binary and install it as a low priviledged service.</p>
 
-
                 <div class="footer">Design by @keyboardcrunch</div>
             </div>
         </div>
     
-</body></html>
+</div></body></html>

@@ -13,7 +13,14 @@
                 <div class="header">
                     <a href="/"><h2>keyboardcrunch</h2></a>
                 </div>
-                <h1>Recommended SentinelOne Custom Detections (STAR Rules)</h1>
+                <!-- page metadata for readers -->
+<div class="post-meta">
+    <p>
+        <b>Created: </b> 2021-04-15
+    
+    </p>
+<!-- page content -->
+<h1>Recommended SentinelOne Custom Detections (STAR Rules)</h1>
 <h2>Deep Visibility</h2>
 <p>SentinelOne Deep Visibility has a very powerful language for querying on nearly any endpoint activity you'd want to dig up. I've been using the Watchlist feature very heavily; from detecting common phishing Url patterns, unapproved software, insider threats, to LOLBAS activity. But very soon the Watchlist feature will be superseded by Custom Detections, basically Watchlist with ranking and remediation options.</p>
 <p>The purpose of this post is to document a few top priority queries that go beyond the granular queries I've created and shared before. The queries shared here will attempt to cover a number of sub-techniques within a single query to reduce the number of saved queries required in the console. This may result in some possibly crazy looking queries but I've attempted to format them in a logical manner that you can take from them what you will.</p>
@@ -138,9 +145,8 @@ OR
 <pre><code class="language-text hljs language-plaintext">SrcProcName In ( "csc.exe", "msbuild.exe" ) AND TgtFileIsExecutable IS TRUE AND ( SrcProcCmdLine RegExp "(?i).*\/t.*:.*" OR SrcProcCmdLine RegExp "(?i).*\/o.*:.*exe" )
 </code></pre>
 
-
                 <div class="footer">Design by @keyboardcrunch</div>
             </div>
         </div>
     
-</body></html>
+</div></body></html>

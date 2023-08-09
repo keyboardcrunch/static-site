@@ -1,5 +1,13 @@
 ---
 layout: ./base.njk
 ---
-
+<!-- page metadata for readers -->
+<div class="post-meta">
+    <p>
+        <b>Created: </b> {{ date | date('DATE') }}
+    {% if lastmod %}
+        &nbsp<b>Updated: </b> {{ lastmod | date('DATE') }}
+    {% endif %}
+    </p>
+<!-- page content -->
 {{ content | safe }}

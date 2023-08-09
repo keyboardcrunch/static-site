@@ -31,8 +31,9 @@ the necessary metadata.
 ```
 
 ## TODO
-* Add pagination to posts/ and thoughts/
+* Fix H1 left alignment on page.njk
 * Complete the 'Good Reads' bookmarks section to share recently read/bookmarked sites.
+* ~~Add pagination to posts/ and thoughts/~~
 * ~~Create a helper util to create new post/thought pages~~
 * ~~Setup the Lume Feed plugin so all site posts aren't bundled together~~
 * ~~Add a theme toggle for dark/light mode~~
