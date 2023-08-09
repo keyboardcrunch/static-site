@@ -65,6 +65,15 @@ const site = lume(
     },
 );
 
+// Some scripts that can be run with `lume run X`
+site.script(
+    "publish",
+    "deno task build",
+    "git add _site/",
+    "git commit -m 'automated publish task'",
+    "git push origin main"
+);
+
 site
     .ignore("README.md")
     .copy("/static/", ".")
