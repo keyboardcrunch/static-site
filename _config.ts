@@ -7,7 +7,6 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 //import minifyHTML from "lume/plugins/minify_html.ts";
 
 const search = { returnPageData: true }; // Lume 2.0 prep, post.title vs post.data.title
-const paginate = {/* your config here */};
 const blogFeed = {
     // Feed query and results
     output: ["/posts/feed.rss"],
@@ -61,7 +60,6 @@ const site = lume(
     },
     { 
         search,
-        paginate,
     },
 );
 
@@ -74,8 +72,13 @@ site.script(
     "git push origin main"
 );
 
+// Ignore backup files
+site.ignore((path) => {
+  return path.match(/.*\.bak$/) !== null;
+});
+
 site
-    .ignore("README.md")
+    .ignore("README.md", "deno.lock")
     .copy("/static/", ".")
     .copyRemainingFiles() // include all other files stored in folders
     .remoteFile(
