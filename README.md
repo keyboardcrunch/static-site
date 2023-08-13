@@ -2,9 +2,15 @@
 
 This is a personal blog and micro-blog, written in TypeScript/Deno using the Lume static site generator.
 
-It's currently very ugly as I decided I didn't like the defaults of Tailwind CSS, didn't want to use WindiCSS
-as it's deprecated, and I don't need the extras they come with. There's still a list of things todo to get this site
-ready.
+**The key features are:**
+* Simple landing page
+* Personal links
+* Blog posts with dedicated rss feed
+* Micro-blog ("thoughts") with dedicated rss feed
+* "Good Reads" recently read list generated from Shiori bookmark server API
+
+It is a bit ugly at the moment because I prioritized learning Deno, TypeScript, and Lume over learning and using TailWind; 
+so all the CSS is a bit hacky but it's close to exactly how I want things.
 
 ## lumepost.ts
 
@@ -31,8 +37,10 @@ the necessary metadata.
 ```
 
 ## TODO
-* Fix H1 left alignment on page.njk
-* Complete the 'Good Reads' bookmarks section to share recently read/bookmarked sites.
+* Make columns auto-align and auto-size with and w/o "good reads"
+* Add option to limit the amount of bookmarks fetched
+* ~~Complete the 'Good Reads' bookmarks section to share recently read/bookmarked sites~~
+* ~~Fix H1 left alignment on page.njk~~
 * ~~Add pagination to posts/ and thoughts/~~
 * ~~Create a helper util to create new post/thought pages~~
 * ~~Setup the Lume Feed plugin so all site posts aren't bundled together~~
