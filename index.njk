@@ -57,14 +57,14 @@ layout: layouts/base.njk
     </div>
 
     <!-- Good Reads -->
-    <!-- Need to figure out presentation of bookmarks/links and the data-source 
+    {% if bookmarks != undefined %}
     <div class="column">
-        <h2><a href="/thoughts/">Good Reads</a></h2>
+        <h2><a>Recent Reads</a></h2>
         <ul>
-            {% for thought in search.pages("type=thought", "", 10) %}
-                <li><a href="{{ thought.url }}">{{ thought.title }}</a></li>
+            {% for bookmark in bookmarks %}
+                <li><a href="{{ bookmark.url }}">{{ bookmark.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
-    -->
+    {% endif %}
 </div>
