@@ -7,7 +7,7 @@ This is a personal blog and micro-blog, written in TypeScript/Deno using the Lum
 * Personal links
 * Blog posts with dedicated rss feed
 * Micro-blog ("thoughts") with dedicated rss feed
-* "Recent Reads" recently read list generated from Shiori bookmark server API
+* "Recent Reads" recently read list generated from Shiori bookmark server API (on build)
 
 It is a bit ugly at the moment because I prioritized learning Deno, TypeScript, and Lume over learning and using TailWind; 
 so all the CSS is a bit hacky but it's close to exactly how I want things.
