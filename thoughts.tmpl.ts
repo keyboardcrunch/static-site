@@ -9,7 +9,6 @@ export default function* ({ search, paginate }) {
   for (
     const data of paginate(posts, { url, size: 10 })
   ) {
-    // Show the first page in the menu
     if (data.pagination.page === 1) {
       data.menu = {
         visible: true,
