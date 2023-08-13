@@ -7,7 +7,7 @@ This is a personal blog and micro-blog, written in TypeScript/Deno using the Lum
 * Personal links
 * Blog posts with dedicated rss feed
 * Micro-blog ("thoughts") with dedicated rss feed
-* "Good Reads" recently read list generated from Shiori bookmark server API
+* "Recent Reads" recently read list generated from Shiori bookmark server API
 
 It is a bit ugly at the moment because I prioritized learning Deno, TypeScript, and Lume over learning and using TailWind; 
 so all the CSS is a bit hacky but it's close to exactly how I want things.
@@ -37,9 +37,9 @@ the necessary metadata.
 ```
 
 ## TODO
-* Make columns auto-align and auto-size with and w/o "good reads"
+* Make columns auto-align and auto-size with and w/o "recent reads"
 * Add option to limit the amount of bookmarks fetched
-* ~~Complete the 'Good Reads' bookmarks section to share recently read/bookmarked sites~~
+* ~~Complete the 'Recent Reads' bookmarks section to share recently read/bookmarked sites~~
 * ~~Fix H1 left alignment on page.njk~~
 * ~~Add pagination to posts/ and thoughts/~~
 * ~~Create a helper util to create new post/thought pages~~
