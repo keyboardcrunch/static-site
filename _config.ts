@@ -4,11 +4,16 @@ import feed from "lume/plugins/feed.ts";
 import filter_pages from "lume/plugins/filter_pages.ts";
 import inline from "lume/plugins/inline.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
-//import minifyHTML from "lume/plugins/minify_html.ts";
+import minifyHTML from "lume/plugins/minify_html.ts";
+import { login, get_bookmarks } from "./shiori.ts";
 
+// Load "recently read" from bookmarks server
+const bm_session = await login();
+const bookmarks = await get_bookmarks(bm_session, true); // true = public bookmarks only
+
+// Lume Site Setup
 const search = { returnPageData: true }; // Lume 2.0 prep, post.title vs post.data.title
 const blogFeed = {
-    // Feed query and results
     output: ["/posts/feed.rss"],
     query: "type=blogpost",
     sort: "date=desc",
@@ -21,7 +26,6 @@ const blogFeed = {
         generator: false, // don't report feed generator
     },
     items: {
-        // configuration of feed items
         title: "=title",
         description: "=description",
         date: "=date",
@@ -29,7 +33,6 @@ const blogFeed = {
     },
 };
 const thoughtFeed = {
-    // Feed query and results
     output: ["/thoughts/feed.rss"],
     query: "type=thought",
     sort: "date=desc",
@@ -42,7 +45,6 @@ const thoughtFeed = {
         generator: false, // don't report feed generator
     },
     items: {
-        // configuration of feed items
         title: "=title",
         description: "=description",
         date: "=date",
@@ -63,24 +65,10 @@ const site = lume(
     },
 );
 
-// Some scripts that can be run with `lume run X`
-site.script(
-    "publish",
-    "deno task build",
-    "git add _site/",
-    "git commit -m 'automated publish task'",
-    "git push origin main"
-);
-
-// Ignore backup files
-site.ignore((path) => {
-  return path.match(/.*\.bak$/) !== null;
-});
-
 site
     .ignore("README.md", "deno.lock")
     .copy("/static/", ".")
-    .copyRemainingFiles() // include all other files stored in folders
+    .copyRemainingFiles()
     .remoteFile(
         "/assets/code.css",
         "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css",
@@ -90,8 +78,18 @@ site
     .use(feed(thoughtFeed))
     .use(codeHighlight())
     .use(filter_pages())
-    .use(inline());
-    //.use(minifyHTML());
-
+    .use(inline())
+    .use(minifyHTML())
+    .data("bookmarks", bookmarks)
+    .ignore((path) => {
+        return path.match(/.*\.bak$/) !== null;
+    })
+    .script(
+        "publish",
+        "deno task build",
+        "git add _site/",
+        "git commit -m 'automated publish task'",
+        "git push origin main"
+    );
 
 export default site;
