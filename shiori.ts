@@ -1,4 +1,4 @@
-import "https://deno.land/x/dotenv/load.ts";
+import "https://deno.land/x/dotenv@v3.2.2/load.ts";
 
 export async function login() {
     const sUri = Deno.env.get("shiori_uri");
