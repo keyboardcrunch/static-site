@@ -1,3 +1,5 @@
+#!/usr/bin/env -S deno run --allow-write 
+
 import { Command, EnumType } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
 import * as path from "https://deno.land/std@0.192.0/path/mod.ts";
 import { existsSync } from "https://deno.land/std@0.192.0/fs/mod.ts";
