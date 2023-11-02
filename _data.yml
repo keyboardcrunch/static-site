@@ -16,10 +16,6 @@ topmenu:
 
 
 socials:
-  - name: Twitter
-    link: https://twitter.com/keyboard_crunch
-    img: null
-
   - name: Mastodon
     link: https://fosstodon.org/@keyboardcrunch
     img: null

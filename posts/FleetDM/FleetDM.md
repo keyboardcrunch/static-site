@@ -84,7 +84,7 @@ So far I've read some documentation, stood up a server, registered a few hosts, 
         * CIS for macOS and Windows.
         * CISA known exploited vulnerabilities (KEV).
         * Agent auto-update.
-* The UI buries the lead with regards to labels, query data
+* The UI buries the lead with regards to labels, query data, and whether or not CIS policies can be used on the Community version.
 
 ## Next Steps
 
