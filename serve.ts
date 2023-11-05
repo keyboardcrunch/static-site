@@ -1,19 +1,71 @@
-import Server from "lume/core/server.ts";
-import notFound from "lume/middlewares/not_found.ts";
+import "https://deno.land/x/dotenv/load.ts";
+import {
+    Application,
+    Router,
+    HttpError,
+    Status,
+  } from "https://deno.land/x/oak/mod.ts";
 
-const server = new Server({
+const kv = await Deno.openKv();
+const router = new Router();
+const app = new Application();
+
+// Error handler middleware
+app.use(async (context, next) => {
+    try {
+      await next();
+    } catch (e) {
+      if (e instanceof HttpError) {
+        // deno-lint-ignore no-explicit-any
+        context.response.status = e.status as any;
+        if (e.expose) {
+          context.response.body = `<!DOCTYPE html>
+              <html>
+                <body>
+                  <h3>${e.status} - ${e.name}</h3>
+                </body>
+              </html>`;
+        } else {
+          context.response.body = `<!DOCTYPE html>
+              <html>
+                <body>
+                  <h1>${e.status} - ${Status[e.status]}</h1>
+                </body>
+              </html>`;
+        }
+      } else if (e instanceof Error) {
+        context.response.status = 500;
+        context.response.body = `<!DOCTYPE html>
+              <html>
+                <body>
+                  <h1>500 - Internal Server Error</h1>
+                </body>
+              </html>`;
+      }
+    }
+  });
+
+router
+    .get("/linkshare", async (context) => {
+        const params = context.request.url.searchParams;
+        const count = Number(params.get("count")) || 20;
+        const resp = [];
+        const links = await kv.list({ prefix: ["linkshare"]}, { limit: count } );
+        for await (const entry of links) resp.push(entry.value);
+        context.response.body = JSON.stringify(resp);
+    })
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+app.use(async (context) => {
+    await context.send({
+        root: `${Deno.cwd()}/_site`,
+        index: "index.html"
+    });
+})
+
+await app.listen({ 
+    hostname: "127.0.0.1",
     port: 8000,
-    root: `${Deno.cwd()}/_site`,
+    alpnProtocols: ["h2", "http/1.1"],
 });
-
-// custom 404 page
-server.use(notFound({
-  root: `${Deno.cwd()}/_site`,
-  page404: "/404/",
-}));
-
-server.addEventListener("start", (): void => {
-  console.log("Listening on http://localhost:8000");
-});
-
-server.start();
