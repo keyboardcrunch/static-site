@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title }}</title>
 
-    <link rel="stylesheet" href="/assets/main.css">
-    {% if page_css %}
-        <link rel="stylesheet" href="/styles/pages/{{ page_css }}">
-    {% endif %}
+        <link rel="stylesheet" href="/assets/main.css">
+        {% if page_css %}
+            <link rel="stylesheet" href="/styles/pages/{{ page_css }}">
+        {% endif %}
+
+        <!-- to replace Good Reads TBD -->
+        <noscript>
+            <style>
+                #jsreads {display:none;}
+            </style>
+        </noscript>
+
+        <script>
+            async function query() {
+                const resp = await fetch("./linkshare?count=20");
+                const data = await resp.json();
+                var table = document.getElementById("linkshare");
+                var rows = '';
+                data.forEach(element => {
+                    rows += '<li><a href="' + element.link + '">' + element.title + '</a></li>';
+
+                });
+                table.innerHTML = rows;
+            }
+            // query();
+        </script>
     </head>
     <body>
         <div>
