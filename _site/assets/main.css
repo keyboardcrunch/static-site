@@ -46,7 +46,7 @@ video {
 
 code {
   margin-left: 4px;
-  margin-right: 4px;
+  padding-right: 4px;
 }
 
 .header {
@@ -61,7 +61,7 @@ code {
 }
 
 .container-center {
-  width: 70%;
+  width: 50%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -72,6 +72,8 @@ code {
 .about-section {
   float: left;
   margin-top: 20px;
+  margin-left: 8%;
+  margin-right: 8%;
   width: 100% auto;
 }
 
@@ -82,19 +84,23 @@ code {
 
 .about-text {
   float: left;
-  width: 60%;
-
+  padding-right: 20px;
 }
 
 .about-links {
   float: left;
-  padding-left: 20px;
+
+}
+
+.about-column {
+  float: inherit;
+  width: 48%;
+  margin-right: 10px;
 }
 
 .post-section {
   float: left;
   width: 100%;
-  margin-top: -20px;
 }
 
 .post-navigation ul {
@@ -113,12 +119,8 @@ code {
 .column {
   float: inherit;
   width: fit-content;
-  padding-right: 10px;
-  /*
-  width: 33%;
-  min-width: 30%;
-  max-width: 50%;
-  */
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .centered-index {
@@ -167,10 +169,17 @@ a.rss-icon {
     margin: 10;
   }
 
+  .about-column {
+    float: inherit;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+
   .column {
     margin-top: -10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 8%;
+    margin-right: 8%;
     width: 100%;
   }
 
