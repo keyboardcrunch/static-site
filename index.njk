@@ -60,10 +60,16 @@ layout: layouts/base.njk
         </ul>
     </div>
 </div>
-
+<!-- to be replaced with Deno.kv linkshare (TBD) -->
+{% if bookmarks != undefined %}
 <div class="post-section">
-    <div class=column id="jsreads">
+    <div class=column id="">
         <h2><a>Recent Reads</a></h2>
-        <ul id="linkshare"></ul>
+        <ul id="">
+            {% for bookmark in bookmarks %}
+                <li><a href="{{ bookmark.url }}">{{ bookmark.title }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
+{% endif %}
