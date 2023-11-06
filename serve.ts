@@ -8,7 +8,7 @@ import {
   } from "https://deno.land/x/oak/mod.ts";
 
 // set to remote site kv if local
-const keystore = Deno.env.get("keystore") || "";
+const keystore = Deno.env.get("keystore") || undefined;
 const apikey = Deno.env.get("DENO_KV_ACCESS_TOKEN");
 Deno.env.set('DENO_KV_ACCESS_TOKEN', apikey);
 const kv = await Deno.openKv(keystore);
