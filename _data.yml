@@ -25,7 +25,7 @@ socials:
     img: null
 
 interests:
-  - topic: "cycling: mtb, trail"
-  - topic: "brewing: beer, mead"
-  - topic: "code: python, powershell, deno/typescript"
+  - topic: "cycling/mtb"
+  - topic: "brewing beer & mead"
+  - topic: "python, powershell, deno/typescript"
   - topic: "self-hosting & homelab"
