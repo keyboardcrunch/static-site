@@ -1,3 +1,4 @@
+#!/usr/bin/env -S deno run -A --unstable
 import "https://deno.land/x/dotenv/load.ts";
 import {
     Application,
