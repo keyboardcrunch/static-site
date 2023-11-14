@@ -1,5 +1,6 @@
 ---
 title: Speaking with Purpose
+short_title: Speaking with Purpose
 date: "2023-11-14T00:13:19.422Z"
 draft: false
 description: "Reflections on communication, self representation, and professionalism"
