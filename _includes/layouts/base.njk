@@ -18,7 +18,7 @@
         </noscript>
 
         <script>
-            async function query() {
+            async function query_linkshare() {
                 const resp = await fetch("./linkshare?count=15");
                 const data = await resp.json();
                 var table = document.getElementById("linkshare");
@@ -29,7 +29,6 @@
                 });
                 table.innerHTML = rows;
             }
-            query();
         </script>
     </head>
     <body>
