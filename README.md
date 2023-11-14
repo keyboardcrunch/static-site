@@ -7,10 +7,9 @@ This is a personal blog and micro-blog, written in TypeScript/Deno using the Lum
 * Personal links
 * Blog posts with dedicated rss feed
 * Micro-blog ("thoughts") with dedicated rss feed
-* "Recent Reads" recently read list generated from Shiori bookmark server API (on build)
+* "Recent Reads" list to share interesting or educational links
 
-It is a bit ugly at the moment because I prioritized learning Deno, TypeScript, and Lume over learning and using TailWind; 
-so all the CSS is a bit hacky but it's close to exactly how I want things.
+It is a bit ugly at the moment because I prioritized learning Deno, TypeScript, and Lume over learning and using TailWind; so all the CSS is a bit hacky but it accomplishes what I set out to build and doesn't look bad. It's a living project that will evolve as my needs evolve.
 
 ## lumepost.ts
 
@@ -36,9 +35,17 @@ the necessary metadata.
     -c, --contained                 - Self-contained folder for post. Adds url: ./ meta. 
 ```
 
+## serve.ts
+
+The site started using Lume's serve() function, which was performant and works well on Deno Deploy, but the server need to evolve to include a "link share" API where I could dyamically add and remove links for the "Recently Read" section of my site without having to rebuild and republish (which the previous Shiori bookmark server API fetch required, which kept the site truly static). So this new server is based on Oak, leverages Deno KV, and still works great on Deno Deploy.
+
+If you noticed that the API is missing POST/DELETE methods, or any visible means to adding and removing links, that's because it is. `linkshare.ts` is the answer, I found it more reasonable to directly interface with the KV store hosted by Deno Deploy so that my development and production environment could share data, plus the benefit of not needing extra keys and authentication than necessary.
+
 ## TODO
-* Make columns auto-align and auto-size with and w/o "recent reads"
-* Add option to limit the amount of bookmarks fetched
+* Adding **short_title** to lumepost.ts output for new 'thoughts'. It's required.
+* Make columns auto-align and auto-size (better) with and w/o "recent reads".
+* ~~switch from build-time "recent reads" to API based method~~
+* ~~Add option to limit the amount of bookmarks fetched~~
 * ~~Complete the 'Recent Reads' bookmarks section to share recently read/bookmarked sites~~
 * ~~Fix H1 left alignment on page.njk~~
 * ~~Add pagination to posts/ and thoughts/~~
