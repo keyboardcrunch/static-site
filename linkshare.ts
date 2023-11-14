@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --unstable -A
+#!/usr/bin/env -S deno run -A --unstable
 import "https://deno.land/x/dotenv/load.ts";
 import { Command, EnumType } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts";
 import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
@@ -74,13 +74,13 @@ const { options } = await new Command()
   .action((options) => {
     delLink(options.link);
   })
-    // list
-    .command("list", "list cmd")
-    .option("-l, --link <link:string>", "Link address.")
-    .option("-c, --count <count:number>", "Limit results.")
-    .action((options) => {
-      const count: number = options.count || 20;
-      const link = options.link || "";
-      listLink(link, count);
-    })
+  // list
+  .command("list", "list cmd")
+  .option("-l, --link <link:string>", "Link address.")
+  .option("-c, --count <count:number>", "Limit results.")
+  .action((options) => {
+    const count: number = options.count || 20;
+    const link = options.link || "";
+    listLink(link, count);
+  })
   .parse(Deno.args);
