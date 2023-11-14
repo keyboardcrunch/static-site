@@ -79,7 +79,6 @@ site
     .use(codeHighlight())
     .use(filter_pages())
     .use(inline())
-    .use(minifyHTML())
     .data("bookmarks", bookmarks)
     .ignore((path) => {
         return path.match(/.*\.bak$/) !== null;
