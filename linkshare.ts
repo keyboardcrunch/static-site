@@ -37,7 +37,7 @@ async function delLink(url: string) {
 async function listLink(url: string, count: number) {
   if ( url == "" ) {
     const resp = [];
-    const links = await kv.list({ prefix: ["linkshare"]}, { limit: count } );
+    const links = await kv.list({ prefix: ["linkshare"]}, { limit: count, reverse: true } );
     for await (const entry of links) resp.push(entry.value);
     console.log(resp);
   } else {
