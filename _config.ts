@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import nunjucks from "lume/plugins/nunjucks.ts";
 import date from "lume/plugins/date.ts";
 import feed from "lume/plugins/feed.ts";
 import filter_pages from "lume/plugins/filter_pages.ts";
@@ -73,6 +74,7 @@ site
         "/assets/code.css",
         "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css",
       )
+    .use(nunjucks())
     .use(date())
     .use(feed(blogFeed))
     .use(feed(thoughtFeed))
