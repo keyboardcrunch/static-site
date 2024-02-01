@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run -A --unstable
+#!/usr/bin/env -S deno run -A --unstable-kv
 import "https://deno.land/x/dotenv/load.ts";
 import {
     Application,
