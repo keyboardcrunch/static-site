@@ -75,5 +75,4 @@ app.use(async (context) => {
 await app.listen({ 
     hostname: "127.0.0.1",
     port: 8000,
-    alpnProtocols: ["h2", "http/1.1"],
 });
