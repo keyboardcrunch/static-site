@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Assistant Journey</title>
+
+        <link rel="stylesheet" href="/assets/main.css">
+        
+
+        <!-- to replace Good Reads TBD -->
+        <noscript>
+            <style>
+                #jsreads {display:none;}
+            </style>
+        </noscript>
+
+        <script>
+            async function query_linkshare() {
+                const resp = await fetch("./linkshare?count=15");
+                const data = await resp.json();
+                var table = document.getElementById("linkshare");
+                var rows = '';
+                data.forEach(element => {
+                    rows += '<li><a href="' + element.link + '">' + element.title + '</a></li>';
+
+                });
+                table.innerHTML = rows;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <div class="container-center">
+                <div class="header">
+                    <a href="/"><h2>keyboardcrunch</h2></a>
+                </div>
+                <!-- page metadata for readers -->
+<div class="post-meta">
+    <p>
+        <b>Created: </b> 2024-01-31
+    
+    </p>
+<!-- page content -->
+<h1>My Home Assistant Journey</h1>
+<p>So I've been experimenting, at high cost, with a few different home security platforms and have taken various steps at securing or isolating the devices all to find sacrifices I wasn't willing to make or running into quality and reliability issues. I don't have too many requirements, I don't want or need to fully automate my home, door and motion sensors are optional; I'd ideally like good camera coverage with recording and motion detection alerts that doesn't require cloud connectivity (the biggest ask of all).</p>
+<p>To get into what I've tried, and to challenge my recollection of thoughts and issues on past configurations, I'm detailing what I can recall below.</p>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Pro's</th>
+<th>Con's</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wyze</td>
+<td>Fair prices. US hosted cloud.</td>
+<td>Battery life on cameras is mediocre. Dropped support for RSTP firmware. Limited device offering.</td>
+<td>Didn't like the lack of privacy mode on cameras.</td>
+</tr>
+<tr>
+<td>Eufy (Anker)</td>
+<td>Good prices for quality cameras, easy setup.</td>
+<td>Cloud dependencies, limited device offerings.</td>
+<td>I like Anker, but there've been untrustworthy responses to vulnerabilites and I'm not quick to trust Chinese tech companies.</td>
+</tr>
+<tr>
+<td>Kasa (TP-Link)</td>
+<td>Easy to setup, reliable, nice app features.</td>
+<td>Cloud dependencies.</td>
+<td>I like TP-Link devices and use their powerline adapters and LED lights over the expensive Philips gear.</td>
+</tr>
+<tr>
+<td>Aqara</td>
+<td>Huge selection of devices, great prices.</td>
+<td>The hub is awful and unreliable, and persistent cloud chatter.</td>
+<td>The devices all use Zigbee and are extremely easy to pair to a Home Assistant managed Zigbee network.</td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>Eh.</td>
+<td>Price. Requires a hub.</td>
+<td>Only experimented with the hub and lights, found Kasa configuration better w/o requiring a hub.</td>
+</tr>
+</tbody>
+</table>
+<h2>Enter Home Assistant</h2>
+<p>It was a complete accident. I'd tried it out before, long ago, and encountered enough issues I gave up and gave it no mind. But I'd purchased a stack of Aqara door sensors, motion sensors, temperature sensors, air quality sensors, a camera and hub all on discount after hearing both that folks were able to run them with limited cloud connectivity and that there was some success with pairing the devices to Zigbee hubs (with limitations). I gave the hub 17 minutes of time before hating it, and being on a mission at the time I immediately moved to RPi Imager to write Home Assistant to an SD.</p>
+<p>The Home Assistant image for Raspberry Pi was dead simple to setup. I purchased the <a href="https://www.amazon.com/gp/product/B09KXTCMSC">Sonoff Zigbee 3.0 USB dongle</a> over the other options (research led me to believe it worked better with more devices). With it I've had ZERO problems pairing every single Aqara device I've tried. Below are the list of devices I've connected to my setup and aside from some battery drain have had no issues with.</p>
+<ul>
+<li><a href="https://www.amazon.com/gp/product/B07D37FKGY/">Aqara Temp and Humidity Sensor</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07PJT939B/">Aqara Vibration Sensor</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07D37VDM3/">Aqara Door/Window Sensor</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07D19YXND/">Aqara Mini Switch</a></li>
+<li><a href="https://www.amazon.com/gp/product/B094R8RBWT/">Aqara Indoor Air Quality Monitor</a></li>
+<li><a href="https://www.amazon.com/gp/product/B0B9XZ1D51/">Aqara Motion Sensor</a></li>
+<li><a href="https://www.amazon.com/gp/product/B0BQCSC19C/">Kasa 1000 Lumen Smart Bulbs</a></li>
+<li><a href="https://www.amazon.com/gp/product/B083JKSSR5/">Kasa Smart Power Strip</a></li>
+<li><a href="https://www.amazon.com/gp/product/B06WD6Q8K9/">Kasa Smart WiFi Plugs</a></li>
+<li>Raspberry Pi Zero 2w running MotionEye OS</li>
+<li><a href="https://www.adafruit.com/product/2267">Adafruit Bluefruit LE Friend</a></li>
+</ul>
+<p>I didn't bother myself to find any blog posts or YouTube videos on configurations, beyond seeing what was capable or looking for inspiration, so I didn't follow some norms for my configuration (specifically the configuration of my form of an alarm setup). But I do have a nice dashboard and ticked all the boxes on my needs.</p>
+<ul>
+<li>[x] Global connectivity through Tailscale.</li>
+<li>[x] Presence and motion detection.</li>
+<li>[x] Temperature, humidity, and AQI monitoring.</li>
+<li>[x] NFC tags and multi-mode clicker buttons to toggle light scenes.</li>
+<li>[x] On-prem only camera with motion detection and recording.</li>
+<li>[x] Alarm toggle with push notifications to the HA mobile app.</li>
+<li>[x] CalDAV to sync calendar events from my email server.</li>
+<li>[ ] Geolocation and tracking. TBD.</li>
+</ul>
+<h2>Screenshots</h2>
+<p>After seeing all the data I have access to and all the connectivity options available, I immediately took to redesigning my home dashboard 3 nights in a row, finally landing on a page that would give me a daily outlook, breakdown of bedroom lights/temp, and security controls.</p>
+<p><img src="./Home_Dashboard.png" alt="Home Dashboard"></p>
+
+                <div class="footer">Made by keyboardcrunch | <a href="https://github.com/keyboardcrunch/static-site/">source code </a></div>
+            </div>
+        </div>
+    
+</div></body></html>

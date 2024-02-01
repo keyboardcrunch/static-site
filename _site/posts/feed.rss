@@ -2,65 +2,67 @@
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
   <channel>
     <title>keyboardcrunch.com</title>
-    <link>http://localhost:3000/</link>
-    <atom:link href="http://localhost:3000/posts/feed.rss" rel="self" type="application/rss+xml"/>
+    <link>http://localhost/</link>
+    <atom:link href="http://localhost/posts/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of an internet dwelling creature.</description>
-    <lastBuildDate>Thu, 01 Feb 2024 00:15:33 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2024 03:29:19 GMT</lastBuildDate>
     <language>en</language>
-    <generator/>
+    <item>
+      <title>Home Assistant Journey</title>
+      <link>http://localhost/posts/Home%20Assistant%20Journey/</link>
+      <guid isPermaLink="false">http://localhost/posts/Home%20Assistant%20Journey/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Thu, 01 Feb 2024 02:05:09 GMT</pubDate>
+    </item>
     <item>
       <title>Kicking the tires on FleetDM</title>
-      <link>http://localhost:3000/posts/FleetDM/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/FleetDM/</guid>
+      <link>http://localhost/posts/FleetDM/</link>
+      <guid isPermaLink="false">http://localhost/posts/FleetDM/</guid>
       <description>Kicking the tires on FleetDM, for fun and security.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sun, 20 Aug 2023 18:40:48 GMT</pubDate>
     </item>
     <item>
       <title>Finding Some Inspiration</title>
-      <link>http://localhost:3000/posts/finding-some-inspiration/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/finding-some-inspiration/</guid>
-      <description/>
+      <link>http://localhost/posts/finding-some-inspiration/</link>
+      <guid isPermaLink="false">http://localhost/posts/finding-some-inspiration/</guid>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 12 Nov 2022 00:28:44 GMT</pubDate>
     </item>
     <item>
       <title>Hacking a Better SentinelOne</title>
-      <link>http://localhost:3000/posts/hacking_better_sentinelone/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/hacking_better_sentinelone/</guid>
-      <description/>
+      <link>http://localhost/posts/hacking_better_sentinelone/</link>
+      <guid isPermaLink="false">http://localhost/posts/hacking_better_sentinelone/</guid>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 26 Mar 2022 17:43:36 GMT</pubDate>
     </item>
     <item>
       <title>Recommended SentinelOne Custom Detections</title>
-      <link>http://localhost:3000/posts/Recommended-SentinelOne-Custom-Detections/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/Recommended-SentinelOne-Custom-Detections/</guid>
-      <description/>
+      <link>http://localhost/posts/Recommended-SentinelOne-Custom-Detections/</link>
+      <guid isPermaLink="false">http://localhost/posts/Recommended-SentinelOne-Custom-Detections/</guid>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Fri, 16 Apr 2021 00:16:38 GMT</pubDate>
     </item>
     <item>
       <title>SCCM Baselines for SentinelOne</title>
-      <link>http://localhost:3000/posts/SCCM_Baseline_For_SentinelOne/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/SCCM_Baseline_For_SentinelOne/</guid>
-      <description/>
+      <link>http://localhost/posts/SCCM_Baseline_For_SentinelOne/</link>
+      <guid isPermaLink="false">http://localhost/posts/SCCM_Baseline_For_SentinelOne/</guid>
+      <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Thu, 01 Apr 2021 00:10:01 GMT</pubDate>
     </item>
     <item>
       <title>Fun With Wireguard</title>
-      <link>http://localhost:3000/posts/fun-with-wireguard/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/fun-with-wireguard/</guid>
-      <description/>
+      <link>http://localhost/posts/fun-with-wireguard/</link>
+      <guid isPermaLink="false">http://localhost/posts/fun-with-wireguard/</guid>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Wed, 31 Mar 2021 02:12:25 GMT</pubDate>
     </item>
     <item>
       <title>Email Security</title>
-      <link>http://localhost:3000/posts/email-security/</link>
-      <guid isPermaLink="false">http://localhost:3000/posts/email-security/</guid>
-      <description/>
+      <link>http://localhost/posts/email-security/</link>
+      <guid isPermaLink="false">http://localhost/posts/email-security/</guid>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 30 Jan 2021 20:42:21 GMT</pubDate>
     </item>
