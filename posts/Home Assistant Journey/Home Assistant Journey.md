@@ -1,10 +1,9 @@
 ---
-title: Home Assistant Journey
+title: "Home Assistant Journey"
 date: "2024-02-01T02:05:09.880Z"
 draft: false
 url: ./
 description: ""
-
 ---
 
 # My Home Assistant Journey
