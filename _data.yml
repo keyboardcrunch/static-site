@@ -23,9 +23,13 @@ socials:
   - name: GitHub
     link: https://github.com/keyboardcrunch
     img: null
+    
+  - name: X
+    link: https://x.com/keyboardcrunch_
+    img: null
 
 interests:
   - topic: "cycling/mtb"
-  - topic: "brewing beer & mead"
+  - topic: "fermenting, occasional brewing"
   - topic: "python, powershell, deno/typescript"
   - topic: "self-hosting & homelab"

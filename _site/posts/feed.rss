@@ -5,7 +5,7 @@
     <link>http://localhost:3000/</link>
     <atom:link href="http://localhost:3000/posts/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of an internet dwelling creature.</description>
-    <lastBuildDate>Thu, 01 Feb 2024 03:32:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2024 01:25:43 GMT</lastBuildDate>
     <language>en</language>
     <item>
       <title>Home Assistant Journey</title>
