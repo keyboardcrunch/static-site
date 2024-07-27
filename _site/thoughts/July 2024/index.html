@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>July 2024</title>
+
+        <link rel="stylesheet" href="/assets/main.css">
+        
+
+        <!-- to replace Good Reads TBD -->
+        <noscript>
+            <style>
+                #jsreads {display:none;}
+            </style>
+        </noscript>
+
+        <script>
+            async function query_linkshare() {
+                const resp = await fetch("./linkshare?count=15");
+                const data = await resp.json();
+                var table = document.getElementById("linkshare");
+                var rows = '';
+                data.forEach(element => {
+                    rows += '<li><a href="' + element.link + '">' + element.title + '</a></li>';
+
+                });
+                table.innerHTML = rows;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <div class="container-center">
+                <div class="header">
+                    <a href="/"><h2>keyboardcrunch</h2></a>
+                </div>
+                <!-- page metadata for readers -->
+<div class="post-meta">
+    <p>
+        <b>Created: </b> 2024-07-27
+    
+    </p>
+<!-- page content -->
+<p>This month has been a crazy one. The weather has been awful, I was temporarily displaced by hurricane Beryl (but it allowed me the opportunity to work out of the SpaceX facilities in Bastrop for a week), I bought a friend a bike and some gear, I purchased the early release of the Starlink Mini, had a few mental setbacks and recovered, lost more weight, and added gravel bike (Trek ALR4) to my collection. My daily routine has been all out of wack with work and cycling taking up much of my week day leading me to spend most of the weekend decompressing and relaxing; meaning I'm feeling unsatisfied with the lack of study and project time as if I'm in full cope mode. But things are still looking up, I'm healthy, and I still have motivation.</p>
+<p>Now for some links I've come across, skimmed, and wish I had more time to read through and absorb.</p>
+<ul>
+<li><a href="https://syscalls.mebeim.net/?table=x86/64/x64/latest">Linux Kernel Syscall Tables</a></li>
+<li><a href="https://github.com/yunginnanet/HellPot">Younginnanet - HellPot</a></li>
+<li><a href="http://www.sentinelone.com/labs/fin7-reboot-cybercrime-gang-enhances-ops-with-new-edr-bypasses-and-automated-attacks/">Fin7's New EDR Bypasses and Automated Attacks</a></li>
+<li><a href="https://retooling.io/blog/an-unexpected-journey-into-microsoft-defenders-signature-world">An Unexpected Journey Into Microsoft Defender's Signature World</a></li>
+<li><a href="https://cloudbsd.xyz/">CloudBSD</a></li>
+<li><a href="https://sysdig.com/blog/ebpf-offensive-capabilities/">eBPF Offensive Capabilities</a></li>
+<li><a href="https://righteousit.com/2024/07/24/hiding-linux-processes-with-bind-mounts/">Hiding Linux Processes with Bind Mounts</a></li>
+<li><a href="https://jasonheppler.org/2024/07/15/how-i-use-obsidian/">Jason Heppler - How I Use Obsidian</a></li>
+<li><a href="https://gist.github.com/milesrichardson/4661c311199b98023701f6cecd3b89b0">Using VLC to Watch m3u8 Playlists</a></li>
+<li><a href="https://github.com/mytechnotalent/Reverse-Engineering">MyTechnoTalent - Reverse Engineering</a></li>
+<li><a href="https://www.brendangregg.com/blog/2024-07-22/no-more-blue-fridays.html">No More Blue Fridays - eBPF on Windows</a></li>
+<li><a href="https://0xinfection.github.io/reversing/">Reverse Engineering for Everyone</a></li>
+<li><a href="https://fev.al/posts/work-journal/">Use A Work Journal To Recover Focus Faster And Clarify Your Thoughts</a></li>
+<li><a href="https://lukedeniston.com/memory-leak-mystery">Memory Leak Mystery</a></li>
+<li><a href="https://grugq.substack.com/p/userland-rootkits-are-lame">Userland Rootkits are Lame</a></li>
+<li><a href="https://ntk148v.github.io/posts/linux-network-performance-ultimate-guide/">Linux Network Performance Ultimate Guide</a></li>
+</ul>
+<p>Finally, after spending a number of weeks with my homelab down and realizing how little of it I use I've decided that when I have time I'll simplify the hosted services and methods for hosting it all, and change up routing and hostnames on my network. I just don't need or use most of what I'm hosting or setup and need to make it easier to maintain (same things goes for this site that seems to have broken routes suddenly after deno/lume updates), though I have competing interests in cycling more and doing more study on OS internals and reverse engineering.</p>
+
+                <div class="footer">Made by keyboardcrunch | <a href="https://github.com/keyboardcrunch/static-site/">source code </a></div>
+            </div>
+        </div>
+    
+</div></body></html>
