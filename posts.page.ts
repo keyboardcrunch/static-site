@@ -1,13 +1,13 @@
-export const layout = "layouts/posts.njk";
+export const layout = "layouts/paginate.njk";
 export const title = "keyboardcrunch - posts";
 export const heading = "Posts";
 export const pageroute = "posts";
 
-export default function* ({ search, paginate }) {
+export default function* ({ search, paginate, paginate_count }) {
   const posts = search.pages("type=blogpost", "date=desc");
 
   for (
-    const data of paginate(posts, { url, size: 20 })
+    const data of paginate(posts, { url, size: paginate_count })
   ) {
     if (data.pagination.page === 1) {
       data.menu = {

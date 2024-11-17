@@ -7,12 +7,7 @@ import {
     Status,
   } from "https://deno.land/x/oak/mod.ts";
 
-// set to remote site kv if local
-const keystore = Deno.env.get("keystore") || undefined;
-const apikey = Deno.env.get("DENO_KV_ACCESS_TOKEN");
-Deno.env.set('DENO_KV_ACCESS_TOKEN', apikey);
-const kv = await Deno.openKv(keystore);
-
+// Setup route and application
 const router = new Router();
 const app = new Application();
 
@@ -52,15 +47,10 @@ app.use(async (context, next) => {
   });
 
 router
-    .get("/linkshare", async (context) => {
+    .get("/test", async (context) => {
         const params = context.request.url.searchParams;
-        const count = Number(params.get("count")) || 20;
-        const resp = [];
-        const links = await kv.list({ prefix: ["linkshare"]}, { limit: count, reverse: true } );
-        for await (const entry of links) resp.push(entry.value);
-        // set a cache header and return the results
         context.response.headers.set("Cache-Control", "max-age=86400, must-revalidate");
-        context.response.body = JSON.stringify(resp);
+        context.response.body = "OK: " + params;
     })
 
 app.use(router.routes());

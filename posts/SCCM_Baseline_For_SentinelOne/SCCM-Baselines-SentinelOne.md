@@ -4,6 +4,9 @@ title: "SCCM Baselines for SentinelOne"
 date: 2021-03-31T19:10:01-05:00
 lastmod: 2021-04-05T19:10:01-05:00
 draft: false
+description: "Just some SCCM/MEMCM configuration items and baselines I put together to detect misconfigured or firewalled SentinelOne agents
+in the fleet. The SentinelOne agents have gotten much better at maintaining console communications to report errors, but I find that a second
+check from a more reliable agent is nice to have too."
 ---
 
 # SCCM Baselines for SentinelOne

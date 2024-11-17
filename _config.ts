@@ -2,26 +2,19 @@ import lume from "lume/mod.ts";
 import nunjucks from "lume/plugins/nunjucks.ts";
 import date from "lume/plugins/date.ts";
 import feed from "lume/plugins/feed.ts";
-import filter_pages from "lume/plugins/filter_pages.ts";
 import inline from "lume/plugins/inline.ts";
 import codeHighlight from "lume/plugins/code_highlight.ts";
-import minifyHTML from "lume/plugins/minify_html.ts";
-import { login, get_bookmarks } from "./shiori.ts";
+import robots from "lume/plugins/robots.ts";
+//import minifyHTML from "lume/plugins/minify_html.ts";
 
-// Load "recently read" from bookmarks server
-const bm_session = await login();
-const bookmarks = await get_bookmarks(bm_session, true); // true = public bookmarks only
-
-// Lume Site Setup
-const search = { returnPageData: true }; // Lume 2.0 prep, post.title vs post.data.title
 const blogFeed = {
-    output: ["/posts/feed.rss"],
+    output: ["/posts/feed.rss", "/posts/feed.json"],
     query: "type=blogpost",
     sort: "date=desc",
     limit: 20,
     info: {
         title: "keyboardcrunch.com",
-        description: "Thoughts and ramblings of an internet dwelling creature.",
+        description: "Thoughts and ramblings of a security-minded, internet dwelling creature.",
         date: new Date(),
         lang: "en",
         generator: false, // don't report feed generator
@@ -33,14 +26,15 @@ const blogFeed = {
         content: "$.post-content",
     },
 };
-const thoughtFeed = {
-    output: ["/thoughts/feed.rss"],
-    query: "type=thought",
+
+const digestFeed = {
+    output: ["/digests/feed.rss", "/digests/posts.json"],
+    query: "type=digest",
     sort: "date=desc",
     limit: 20,
     info: {
         title: "keyboardcrunch.com",
-        description: "Thoughts and ramblings of an internet dwelling creature.",
+        description: "Thoughts and ramblings of a security-minded, internet dwelling creature.",
         date: new Date(),
         lang: "en",
         generator: false, // don't report feed generator
@@ -52,6 +46,7 @@ const thoughtFeed = {
         content: "$.post-content",
     },
 };
+
 const site = lume(
     {
         components: {
@@ -60,10 +55,7 @@ const site = lume(
         server: {
             page404: "/404/",
         },
-    },
-    { 
-        search,
-    },
+    }
 );
 
 site
@@ -77,11 +69,15 @@ site
     .use(nunjucks())
     .use(date())
     .use(feed(blogFeed))
-    .use(feed(thoughtFeed))
+    .use(feed(digestFeed))
     .use(codeHighlight())
-    .use(filter_pages())
     .use(inline())
-    .data("bookmarks", bookmarks)
+    .use(robots({
+        allow: ["Bingbot", "Googlebot", "DuckAssistBot", "DuckDuckBot", "BingPreview", 
+            "FreshRSS", "Miniflux", "yacybot", 
+            "NewsBlur", "Mastodon"],
+        disallow: "*",
+      }))
     .ignore((path) => {
         return path.match(/.*\.bak$/) !== null;
     })

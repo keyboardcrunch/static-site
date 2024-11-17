@@ -2,6 +2,7 @@
 title: "Email Security"
 date: 2021-01-30T14:42:21-06:00
 draft: false
+description: "Just some notes I've put together for myself about email configuration security."
 ---
 
 # Email Security

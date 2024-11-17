@@ -3,6 +3,7 @@ title: "Fun With Wireguard"
 date: 2021-03-30T21:12:25-05:00
 lastmod: 2021-11-03T21:12:25-05:00
 draft: false
+description: "Just a happy little post about my uses for Wireguard, some of the projects out there using it; nothing of real substance."
 ---
 
 # Fun With Wireguard

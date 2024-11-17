@@ -7,9 +7,9 @@ import { json2yaml } from "https://deno.land/x/json2yaml@v1.0.1/mod.ts";
 
 // Variable setup for the util
 const timestamp = new Date().toISOString();
-const postType = new EnumType(["post", "thought"]);
+const postType = new EnumType(["post", "digest"]);
 const postPath = "./posts/";
-const thoughtPath = "./thoughts/";
+const thoughtPath = "./digest/";
 
 interface MetaOptions {
   title: string;
@@ -18,18 +18,20 @@ interface MetaOptions {
   lastmod?: string;
   draft: boolean;
   url?: string;
+  short_title?: string;
 }
 
 // Cliffy commandline arguments setup
 const { options } = await new Command()
-  .name("lumepost")
-  .version("0.0.1")
-  .description("Util to create a new Lume post or thought.")
+  .name("newpost")
+  .version("1.0.2")
+  .description("Util to create a new Lume post or digest.")
   .type("post-type", postType)
-  .option("-n, --new <post:post-type>", "Create a new post or thought.", {
+  .option("-n, --new <post:post-type>", "Create a new post or digest.", {
     required: true,
   })
   .option("-t, --title <title:string>", "Post title.", { required: true })
+  .option("-st, --short <description:string>", "Optional short title.")
   .option("-d, --desc <description:string>", "Optional post description.")
   .option(
     "-c, --contained",
@@ -40,11 +42,18 @@ const { options } = await new Command()
 // Building out our post configuration metadata
 const config: MetaOptions = {
   title: "",
+  short_title: "",
   date: timestamp,
+  description: "",
   draft: true,
 };
 
 if (options.title) config.title = options.title;
+if (options.short) {
+  config.short_title = options.short
+} else {
+  config.short_title = options.title;
+}
 if (options.contained) config.url = "./";
 config.description = options.desc || "";
 
@@ -82,8 +91,8 @@ if (options.new == "post") {
   }
 }
 
-// Create the new 'thought'
-if (options.new == "thought") {
+// Create the new 'digest'
+if (options.new == "digest") {
   let filepath = path.resolve(path.join(thoughtPath, filename));
   if (options.contained) {
     try {

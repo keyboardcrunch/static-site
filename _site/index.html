@@ -6,27 +6,6 @@
 
         <link rel="stylesheet" href="/assets/main.css">
         
-
-        <!-- to replace Good Reads TBD -->
-        <noscript>
-            <style>
-                #jsreads {display:none;}
-            </style>
-        </noscript>
-
-        <script>
-            async function query_linkshare() {
-                const resp = await fetch("./linkshare?count=15");
-                const data = await resp.json();
-                var table = document.getElementById("linkshare");
-                var rows = '';
-                data.forEach(element => {
-                    rows += '<li><a href="' + element.link + '">' + element.title + '</a></li>';
-
-                });
-                table.innerHTML = rows;
-            }
-        </script>
     </head>
     <body>
         <div>
@@ -54,13 +33,13 @@
                 <p><b>Interests and Hobbies:</b></p>
                 <ul>
                     
-                        <li>cycling/mtb</li>
+                        <li>Gravel &amp; Mountain Bikes</li>
                     
-                        <li>fermenting, occasional brewing</li>
+                        <li>Python, PowerShell, Deno/TypeScript</li>
                     
-                        <li>python, powershell, deno/typescript</li>
+                        <li>Self-Hosting &amp; Homelab</li>
                     
-                        <li>self-hosting &amp; homelab</li>
+                        <li>Fermenting &amp; Brewing</li>
                     
                 </ul>
             </div>
@@ -108,30 +87,22 @@
 
     <!-- Micro-blogging -->
     <div class="column">
-        <h2><a href="/thoughts/">Recent Thoughts</a></h2> 
+        <h2><a href="/digests/">Recent Digests</a></h2> 
         <ul>
             
-                <li><a href="/thoughts/July 2024/">2024-07-27  - July 2024</a></li>
+                <li><a href="/digests/July 2024/">Reads &amp; Updates 07/2024</a></li>
             
-                <li><a href="/thoughts/Burnout Self-Awareness/">2024-01-31  - Burnout Self-Awareness</a></li>
+                <li><a href="/digests/Burnout Self-Awareness/">Burnout Self-Awareness</a></li>
             
-                <li><a href="/thoughts/Speaking with Purpose/">2023-11-13  - Speaking with Purpose</a></li>
+                <li><a href="/digests/Speaking with Purpose/">Speaking with Purpose</a></li>
             
-                <li><a href="/thoughts/Art of the cowboy/">2023-07-20  - Don't be a cowboy</a></li>
+                <li><a href="/digests/Art of the cowboy/">Don't be a cowboy</a></li>
             
-                <li><a href="/thoughts/deno_and_lume/">2023-07-01  - Deno and Lume</a></li>
+                <li><a href="/digests/deno_and_lume/">Deno and Lume</a></li>
             
         </ul>
     </div>
 </div>
-<div class="post-section">
-    <div class="column" id="jsreads">
-        <script>query_linkshare()</script>
-        <h2><a>Recent Reads</a></h2>
-        <ul id="linkshare"></ul>
-    </div>
-</div>
-
                 <div class="footer">Made by keyboardcrunch | <a href="https://github.com/keyboardcrunch/static-site/">source code </a></div>
             </div>
         </div>

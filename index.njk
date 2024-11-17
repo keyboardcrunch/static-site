@@ -44,7 +44,7 @@ layout: layouts/base.njk
     <div class="column">
         <h2><a href="/posts/">Recent Posts</a></h2>
         <ul>
-            {% for mypost in search.pages("type=blogpost", "date=desc", 10) %}
+            {% for mypost in search.pages("type=blogpost", "date=desc", 8) %}
                 <li><a href="{{ mypost.url }}">{{ mypost.title }}</a></li>
             {% endfor %}
         </ul>
@@ -52,18 +52,11 @@ layout: layouts/base.njk
 
     <!-- Micro-blogging -->
     <div class="column">
-        <h2><a href="/thoughts/">Recent Thoughts</a></h2> 
+        <h2><a href="/digests/">Recent Digests</a></h2> 
         <ul>
-            {% for thought in search.pages("type=thought", "date=desc", 10) %}
-                <li><a href="{{ thought.url }}">{{ thought.date | date('DATE') }} {% if thought.short_title %} - {{ thought.short_title }}{% endif %}</a></li>
+            {% for digest in search.pages("type=digest", "date=desc", 8) %}
+                <li><a href="{{ digest.url }}">{{ digest.short_title }}</a></li>
             {% endfor %}
         </ul>
-    </div>
-</div>
-<div class="post-section">
-    <div class="column" id="jsreads">
-        <script>query_linkshare()</script>
-        <h2><a>Recent Reads</a></h2>
-        <ul id="linkshare"></ul>
     </div>
 </div>

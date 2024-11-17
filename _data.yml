@@ -1,20 +1,17 @@
 title: keyboardcrunch
 layout: layouts/base.njk
+paginate_count: 6
 
 topmenu:
   - name: posts
     link: ../posts/
   
-  - name: thoughts
-    link: ../thoughts/
+  - name: digest
+    link: ../digest/
   
   - name: projects
-    link: ../projects/
+    link: https://github.com/keyboardcrunch/
   
-  - name: about
-    link: ../about/
-
-
 socials:
   - name: Mastodon
     link: https://infosec.town/@keyboardcrunch
@@ -29,7 +26,7 @@ socials:
     img: null
 
 interests:
-  - topic: "cycling/mtb"
-  - topic: "fermenting, occasional brewing"
-  - topic: "python, powershell, deno/typescript"
-  - topic: "self-hosting & homelab"
+  - topic: "Gravel & Mountain Bikes"
+  - topic: "Python, PowerShell, Deno/TypeScript"
+  - topic: "Self-Hosting & Homelab"
+  - topic: "Fermenting & Brewing"

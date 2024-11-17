@@ -2,6 +2,7 @@
 title: "Recommended SentinelOne Custom Detections"
 date: 2021-04-15T19:16:38-05:00
 draft: false
+description: "Some dated Deep Visibility 1.0 queries I like to highlight for detection capabilities. SentinelOne has grown so much since this post was written."
 ---
 
 # Recommended SentinelOne Custom Detections (STAR Rules)

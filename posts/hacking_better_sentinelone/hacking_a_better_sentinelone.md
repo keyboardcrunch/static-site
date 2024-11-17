@@ -3,6 +3,8 @@ url: ./
 title: "Hacking a Better SentinelOne"
 date: 2022-03-26T12:43:36-05:00
 draft: false
+description: "SentinelOne has since added USB scan capabilities, but this was my whack at building an endpoint service
+that would detect Device Control events and initiate a USB drive scan using the installed agent."
 ---
 
 # Hacking A Better SentinelOne

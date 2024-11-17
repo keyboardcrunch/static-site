@@ -3,6 +3,9 @@ url: ./
 title: "Finding Some Inspiration"
 date: 2022-11-11T18:28:44-06:00
 draft: false
+description: "I've been lacking specific motivation to throw into a singular project (re: there's so much I want to do or study), but recently some
+boredom browsing has lead me to stumble upon some blogs that have given me inspiration for what I'd like to see from my own work. This post covers
+what inspired me and what I put together."
 ---
 
 # Finding Some Inspiration

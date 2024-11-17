@@ -3,7 +3,8 @@ title: "Home Assistant Journey"
 date: "2024-02-01T02:05:09.880Z"
 draft: false
 url: ./
-description: ""
+description: "Just a synopsis of what my point-in-time setup Home Assistant looks like. Includes the Zigbee hardware I chose, some capabilities I've added in
+and how I may use them."
 ---
 
 # My Home Assistant Journey

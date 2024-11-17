@@ -3,6 +3,8 @@
     <ul>
         {% for post in postslist %}
             <li><a href="{{ post.url }}">{{ post.date | date('DATE') }} - {{ post.title }}</a>
+            <!-- should show a blurb from the post as preview -->
+            <p>{{ post.description }}</p>
         {% endfor %}
     </ul>
 </div>

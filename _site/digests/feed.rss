@@ -3,47 +3,49 @@
   <channel>
     <title>keyboardcrunch.com</title>
     <link>http://localhost/</link>
-    <atom:link href="http://localhost/thoughts/feed.rss" rel="self" type="application/rss+xml"/>
-    <description>Thoughts and ramblings of an internet dwelling creature.</description>
-    <lastBuildDate>Sat, 27 Jul 2024 17:13:18 GMT</lastBuildDate>
+    <atom:link href="http://localhost/digests/feed.rss" rel="self" type="application/rss+xml"/>
+    <description>Thoughts and ramblings of a security-minded, internet dwelling creature.</description>
+    <lastBuildDate>Sun, 17 Nov 2024 18:39:46 GMT</lastBuildDate>
     <language>en</language>
     <item>
-      <title>July 2024</title>
-      <link>http://localhost/thoughts/July 2024/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/July 2024/</guid>
-      <description>July 2024</description>
+      <title>Reads &amp; Updates 07/2024</title>
+      <link>http://localhost/digests/July 2024/</link>
+      <guid isPermaLink="false">http://localhost/digests/July 2024/</guid>
+      <description>Life updates and some great links to things I've read this month.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 27 Jul 2024 16:17:28 GMT</pubDate>
     </item>
     <item>
       <title>Burnout Self-Awareness</title>
-      <link>http://localhost/thoughts/Burnout Self-Awareness/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/Burnout Self-Awareness/</guid>
+      <link>http://localhost/digests/Burnout Self-Awareness/</link>
+      <guid isPermaLink="false">http://localhost/digests/Burnout Self-Awareness/</guid>
       <description>Behavioral observations through phases of burnout.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Wed, 31 Jan 2024 23:34:30 GMT</pubDate>
     </item>
     <item>
       <title>Speaking with Purpose</title>
-      <link>http://localhost/thoughts/Speaking with Purpose/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/Speaking with Purpose/</guid>
+      <link>http://localhost/digests/Speaking with Purpose/</link>
+      <guid isPermaLink="false">http://localhost/digests/Speaking with Purpose/</guid>
       <description>Reflections on communication, self representation, and professionalism</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Tue, 14 Nov 2023 00:13:19 GMT</pubDate>
     </item>
     <item>
       <title>Art of the cowboy</title>
-      <link>http://localhost/thoughts/Art of the cowboy/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/Art of the cowboy/</guid>
+      <link>http://localhost/digests/Art of the cowboy/</link>
+      <guid isPermaLink="false">http://localhost/digests/Art of the cowboy/</guid>
       <description>Developers vs Cowboys, the arts of putting things on the internet.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Fri, 21 Jul 2023 00:38:59 GMT</pubDate>
     </item>
     <item>
       <title>Deno and Lume</title>
-      <link>http://localhost/thoughts/deno_and_lume/</link>
-      <guid isPermaLink="false">http://localhost/thoughts/deno_and_lume/</guid>
-      <description>Talking about my first experience with Deno and using Lume to replace my Hugo static site. My first real Deno util, and Deno Deploy comments.</description>
+      <link>http://localhost/digests/deno_and_lume/</link>
+      <guid isPermaLink="false">http://localhost/digests/deno_and_lume/</guid>
+      <description>
+        Talking about my first experience with Deno and using Lume to replace my Hugo static site. My first real Deno util, and Deno Deploy comments.
+      </description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sun, 02 Jul 2023 00:00:00 GMT</pubDate>
     </item>

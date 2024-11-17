@@ -4,14 +4,16 @@
     <title>keyboardcrunch.com</title>
     <link>http://localhost/</link>
     <atom:link href="http://localhost/posts/feed.rss" rel="self" type="application/rss+xml"/>
-    <description>Thoughts and ramblings of an internet dwelling creature.</description>
-    <lastBuildDate>Sat, 27 Jul 2024 17:13:18 GMT</lastBuildDate>
+    <description>Thoughts and ramblings of a security-minded, internet dwelling creature.</description>
+    <lastBuildDate>Sun, 17 Nov 2024 18:39:46 GMT</lastBuildDate>
     <language>en</language>
     <item>
       <title>Home Assistant Journey</title>
       <link>http://localhost/posts/Home%20Assistant%20Journey/</link>
       <guid isPermaLink="false">http://localhost/posts/Home%20Assistant%20Journey/</guid>
-      <description></description>
+      <description>
+        Just a synopsis of what my point-in-time setup Home Assistant looks like. Includes the Zigbee hardware I chose, some capabilities I've added in and how I may use them.
+      </description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Thu, 01 Feb 2024 02:05:09 GMT</pubDate>
     </item>
@@ -27,6 +29,9 @@
       <title>Finding Some Inspiration</title>
       <link>http://localhost/posts/finding-some-inspiration/</link>
       <guid isPermaLink="false">http://localhost/posts/finding-some-inspiration/</guid>
+      <description>
+        I've been lacking specific motivation to throw into a singular project (re: there's so much I want to do or study), but recently some boredom browsing has lead me to stumble upon some blogs that have given me inspiration for what I'd like to see from my own work. This post covers what inspired me and what I put together.
+      </description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 12 Nov 2022 00:28:44 GMT</pubDate>
     </item>
@@ -34,6 +39,9 @@
       <title>Hacking a Better SentinelOne</title>
       <link>http://localhost/posts/hacking_better_sentinelone/</link>
       <guid isPermaLink="false">http://localhost/posts/hacking_better_sentinelone/</guid>
+      <description>
+        SentinelOne has since added USB scan capabilities, but this was my whack at building an endpoint service that would detect Device Control events and initiate a USB drive scan using the installed agent.
+      </description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 26 Mar 2022 17:43:36 GMT</pubDate>
     </item>
@@ -41,6 +49,9 @@
       <title>Recommended SentinelOne Custom Detections</title>
       <link>http://localhost/posts/Recommended-SentinelOne-Custom-Detections/</link>
       <guid isPermaLink="false">http://localhost/posts/Recommended-SentinelOne-Custom-Detections/</guid>
+      <description>
+        Some dated Deep Visibility 1.0 queries I like to highlight for detection capabilities. SentinelOne has grown so much since this post was written.
+      </description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Fri, 16 Apr 2021 00:16:38 GMT</pubDate>
     </item>
@@ -48,6 +59,9 @@
       <title>SCCM Baselines for SentinelOne</title>
       <link>http://localhost/posts/SCCM_Baseline_For_SentinelOne/</link>
       <guid isPermaLink="false">http://localhost/posts/SCCM_Baseline_For_SentinelOne/</guid>
+      <description>
+        Just some SCCM/MEMCM configuration items and baselines I put together to detect misconfigured or firewalled SentinelOne agents in the fleet. The SentinelOne agents have gotten much better at maintaining console communications to report errors, but I find that a second check from a more reliable agent is nice to have too.
+      </description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Thu, 01 Apr 2021 00:10:01 GMT</pubDate>
     </item>
@@ -55,6 +69,7 @@
       <title>Fun With Wireguard</title>
       <link>http://localhost/posts/fun-with-wireguard/</link>
       <guid isPermaLink="false">http://localhost/posts/fun-with-wireguard/</guid>
+      <description>Just a happy little post about my uses for Wireguard, some of the projects out there using it; nothing of real substance.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Wed, 31 Mar 2021 02:12:25 GMT</pubDate>
     </item>
@@ -62,6 +77,7 @@
       <title>Email Security</title>
       <link>http://localhost/posts/email-security/</link>
       <guid isPermaLink="false">http://localhost/posts/email-security/</guid>
+      <description>Just some notes I've put together for myself about email configuration security.</description>
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sat, 30 Jan 2021 20:42:21 GMT</pubDate>
     </item>
