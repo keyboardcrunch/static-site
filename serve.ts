@@ -16,25 +16,15 @@ app.use(async (context, next) => {
     try {
       await next();
     } catch (e) {
+      console.log(e.status);
+      //console.log(e.status);
       if (e instanceof HttpError) {
-        // deno-lint-ignore no-explicit-any
-        context.response.status = e.status as any;
-        if (e.expose) {
-          context.response.body = `<!DOCTYPE html>
-              <html>
-                <body>
-                  <h3>${e.status} - ${e.name}</h3>
-                </body>
-              </html>`;
-        } else {
-          context.response.body = `<!DOCTYPE html>
-              <html>
-                <body>
-                  <h1>${e.status} - ${Status[e.status]}</h1>
-                </body>
-              </html>`;
+        if (e.status === 404) {
+          context.response.redirect("/404/");
+          return;
         }
-      } else if (e instanceof Error) {
+      }     
+      else if (e instanceof Error) {
         context.response.status = 500;
         context.response.body = `<!DOCTYPE html>
               <html>
@@ -42,7 +32,7 @@ app.use(async (context, next) => {
                   <h1>500 - Internal Server Error</h1>
                 </body>
               </html>`;
-      }
+      } else { throw e }
     }
   });
 
