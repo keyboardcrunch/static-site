@@ -9,7 +9,7 @@ import { json2yaml } from "https://deno.land/x/json2yaml@v1.0.1/mod.ts";
 const timestamp = new Date().toISOString();
 const postType = new EnumType(["post", "digest"]);
 const postPath = "./posts/";
-const thoughtPath = "./digest/";
+const thoughtPath = "./digests/";
 
 interface MetaOptions {
   title: string;
@@ -48,6 +48,7 @@ const config: MetaOptions = {
   draft: true,
 };
 
+// TODO: clean-up title for file vs metadata/presentation
 if (options.title) config.title = options.title;
 if (options.short) {
   config.short_title = options.short
