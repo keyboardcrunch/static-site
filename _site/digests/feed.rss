@@ -5,8 +5,16 @@
     <link>http://localhost/</link>
     <atom:link href="http://localhost/digests/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of a security-minded, internet dwelling creature.</description>
-    <lastBuildDate>Sun, 17 Nov 2024 18:39:46 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2024 14:35:50 GMT</lastBuildDate>
     <language>en</language>
+    <item>
+      <title>DOS by Syncthing and Tailscale</title>
+      <link>http://localhost/digests/DOS-by-Syncthing-and-Tailscale/</link>
+      <guid isPermaLink="false">http://localhost/digests/DOS-by-Syncthing-and-Tailscale/</guid>
+      <description>When mismanaging my tailscale network led to firewall alerts and syncthing data leaks.</description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sun, 01 Dec 2024 13:54:54 GMT</pubDate>
+    </item>
     <item>
       <title>Reads &amp; Updates 07/2024</title>
       <link>http://localhost/digests/July 2024/</link>
