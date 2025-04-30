@@ -5,8 +5,16 @@
     <link>http://localhost/</link>
     <atom:link href="http://localhost/posts/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of a security-minded, internet dwelling creature.</description>
-    <lastBuildDate>Sun, 01 Dec 2024 14:35:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Apr 2025 02:14:23 GMT</lastBuildDate>
     <language>en</language>
+    <item>
+      <title>Reclaim Rational Thought</title>
+      <link>http://localhost/posts/Reclaim Rational Thought/</link>
+      <guid isPermaLink="false">http://localhost/posts/Reclaim Rational Thought/</guid>
+      <description/>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Wed, 30 Apr 2025 01:55:24 GMT</pubDate>
+    </item>
     <item>
       <title>Home Assistant Journey</title>
       <link>http://localhost/posts/Home%20Assistant%20Journey/</link>

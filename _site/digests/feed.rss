@@ -5,7 +5,7 @@
     <link>http://localhost/</link>
     <atom:link href="http://localhost/digests/feed.rss" rel="self" type="application/rss+xml"/>
     <description>Thoughts and ramblings of a security-minded, internet dwelling creature.</description>
-    <lastBuildDate>Sun, 01 Dec 2024 14:35:50 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Apr 2025 02:14:23 GMT</lastBuildDate>
     <language>en</language>
     <item>
       <title>DOS by Syncthing and Tailscale</title>
